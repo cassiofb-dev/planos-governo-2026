@@ -207,6 +207,35 @@ button {
   background: #f1f5f9;
 }
 
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-github-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-main);
+  background: #ffffff;
+  border: 1px solid var(--border-highlight);
+  border-radius: var(--radius-full);
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+  transition: all 0.2s ease;
+}
+
+.nav-github-btn:hover {
+  background: #0f172a;
+  color: #ffffff;
+  border-color: #0f172a;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(15, 23, 42, 0.15);
+}
+
 .nav-cta {
   display: flex;
   align-items: center;
@@ -344,6 +373,21 @@ button {
   border-color: var(--border-strong);
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
+}
+
+.btn-github {
+  background: #0f172a;
+  color: #ffffff;
+  border: 1px solid #0f172a;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.15);
+}
+
+.btn-github:hover {
+  background: #1e293b;
+  color: #ffffff;
+  border-color: #1e293b;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.25);
 }
 
 .hero-stats {
@@ -1196,6 +1240,33 @@ button {
   line-height: 1.6;
 }
 
+.license-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn-github-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  background: #0f172a;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.88rem;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.btn-github-pill:hover {
+  background: #1e293b;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(15, 23, 42, 0.18);
+}
+
 .license-badge-pill {
   display: inline-flex;
   align-items: center;
@@ -1285,7 +1356,14 @@ button {
   margin-top: 10px;
 }
 
+/* --- Table Scroll Hint on Desktop (Hidden) --- */
+.table-wrap::before {
+  display: none;
+}
+
 /* --- Responsive Media Queries --- */
+
+/* Tablets & Small Laptops (max-width: 1024px) */
 @media (max-width: 1024px) {
   .hero-stats {
     grid-template-columns: repeat(2, 1fr);
@@ -1305,29 +1383,538 @@ button {
   }
 }
 
+/* Tablets (Portrait) & Mobile Devices (max-width: 768px) */
 @media (max-width: 768px) {
-  .propostas-grid {
-    grid-template-columns: 1fr;
+  /* Container & Base Spacing */
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
   }
-  .pane-grid {
-    grid-template-columns: 1fr;
+
+  .section {
+    padding: 50px 0;
   }
-  .ia-models-grid {
-    grid-template-columns: 1fr;
+
+  .section-head {
+    margin-bottom: 30px;
   }
-  .method-grid {
-    grid-template-columns: 1fr;
+
+  .section-tag {
+    font-size: 0.74rem;
+    margin-bottom: 6px;
   }
+
+  .section-title {
+    font-size: 1.65rem;
+    line-height: 1.25;
+  }
+
+  .section-desc {
+    font-size: 0.98rem;
+    line-height: 1.55;
+  }
+
+  /* Navigation Header */
+  .site-nav {
+    height: auto;
+  }
+
+  .nav-container {
+    height: 62px;
+  }
+
+  .nav-brand {
+    gap: 10px;
+  }
+
+  .brand-icon {
+    width: 34px;
+    height: 34px;
+    font-size: 0.95rem;
+  }
+
+  .brand-title {
+    font-size: 1.05rem;
+  }
+
+  .brand-tag {
+    font-size: 0.68rem;
+  }
+
   .nav-links {
     display: none;
   }
+
+  .nav-actions {
+    gap: 6px;
+  }
+
+  .nav-github-btn {
+    padding: 7px 12px;
+    font-size: 0.82rem;
+  }
+
+  .nav-cta {
+    padding: 7px 12px;
+    font-size: 0.82rem;
+  }
+
+  /* Hero Section */
+  .hero {
+    padding: 42px 0 32px;
+  }
+
+  .hero-badge-wrap {
+    gap: 6px;
+    margin-bottom: 16px;
+  }
+
+  .badge {
+    padding: 4px 10px;
+    font-size: 0.74rem;
+  }
+
+  .hero-title {
+    font-size: clamp(1.75rem, 6.8vw, 2.25rem);
+    margin-bottom: 14px;
+    line-height: 1.2;
+  }
+
+  .hero-subtitle {
+    font-size: 0.98rem;
+    margin-bottom: 26px;
+    line-height: 1.6;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    margin-bottom: 34px;
+  }
+
+  .btn {
+    width: 100%;
+    min-height: 48px;
+    font-size: 0.92rem;
+    padding: 12px 18px;
+  }
+
+  /* Hero Stats: 2x2 Clean Dashboard on Mobile */
   .hero-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .stat-card {
+    padding: 14px 10px;
+  }
+
+  .stat-number {
+    font-size: 1.7rem;
+    margin-bottom: 4px;
+  }
+
+  .stat-label {
+    font-size: 0.78rem;
+  }
+
+  /* Dossiê dos Candidatos */
+  .propostas-grid {
     grid-template-columns: 1fr;
+    gap: 18px;
+    margin-bottom: 24px;
   }
-  .tabs-panes {
-    padding: 22px 18px;
-  }
+
   .candidato-card {
-    padding: 24px 20px;
+    padding: 22px 16px;
+  }
+
+  .cand-name {
+    font-size: 1.4rem;
+  }
+
+  .cand-badge {
+    font-size: 0.74rem;
+    padding: 3px 8px;
+  }
+
+  .cand-doc-name {
+    font-size: 0.96rem;
+  }
+
+  .cand-summary {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin-bottom: 18px;
+  }
+
+  .cand-pillars-title {
+    font-size: 0.74rem;
+  }
+
+  .cand-pillars {
+    gap: 6px;
+    margin-bottom: 20px;
+  }
+
+  .cand-pillar {
+    font-size: 0.78rem;
+    padding: 4px 10px;
+  }
+
+  .cand-footer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding-top: 14px;
+  }
+
+  .cand-doc-info {
+    justify-content: center;
+    font-size: 0.8rem;
+  }
+
+  .btn-cand-download {
+    width: 100%;
+    justify-content: center;
+    min-height: 46px;
+    font-size: 0.88rem;
+  }
+
+  /* Metanálise Banner */
+  .metanalise-banner {
+    padding: 22px 16px;
+    border-left-width: 4px;
+    border-radius: var(--radius-md);
+    margin-bottom: 28px;
+  }
+
+  .metanalise-banner h3 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+  }
+
+  .metanalise-banner p {
+    font-size: 0.94rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  .consensus-card {
+    padding: 16px 14px;
+  }
+
+  .consensus-card h4 {
+    font-size: 0.98rem;
+  }
+
+  .consensus-card p {
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
+
+  /* Interactive 10 Eixos Section */
+  .tabs-container {
+    border-radius: var(--radius-md);
+  }
+
+  .tabs-nav {
+    padding: 8px;
+    gap: 6px;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+  }
+
+  .tab-nav-btn {
+    padding: 8px 12px;
+    font-size: 0.82rem;
+    scroll-snap-align: start;
+    flex-shrink: 0;
+  }
+
+  .tabs-panes {
+    padding: 20px 14px;
+  }
+
+  .pane-header {
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    gap: 10px;
+  }
+
+  .pane-title-wrap {
+    gap: 10px;
+  }
+
+  .pane-number {
+    width: 32px;
+    height: 32px;
+    font-size: 0.9rem;
+  }
+
+  .pane-title {
+    font-size: 1.22rem;
+    line-height: 1.25;
+  }
+
+  .convergence-badge {
+    font-size: 0.74rem;
+    padding: 4px 10px;
+  }
+
+  .pane-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-bottom: 16px;
+  }
+
+  .cand-box {
+    padding: 16px 14px;
+  }
+
+  .cand-box-header {
+    margin-bottom: 10px;
+  }
+
+  .cand-box-title {
+    font-size: 1.02rem;
+  }
+
+  .cand-box-ref {
+    font-size: 0.76rem;
+  }
+
+  .cand-box-list {
+    gap: 10px;
+  }
+
+  .cand-box-list li {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    padding-left: 16px;
+  }
+
+  .pane-meta-verdict {
+    padding: 16px 14px;
+    border-left-width: 4px;
+  }
+
+  .pane-meta-verdict h4 {
+    font-size: 0.86rem;
+    margin-bottom: 6px;
+  }
+
+  .pane-meta-verdict p {
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+
+  /* Comparison Matrix Table */
+  .table-wrap::before {
+    content: "← Deslize horizontalmente para comparar os 10 eixos →";
+    display: block;
+    font-size: 0.74rem;
+    font-weight: 700;
+    color: var(--text-faint);
+    background: #f1f5f9;
+    padding: 9px 14px;
+    text-align: center;
+    border-bottom: 1px solid var(--border-subtle);
+    letter-spacing: 0.02em;
+  }
+
+  .comparison-table th,
+  .comparison-table td {
+    padding: 12px 14px;
+    font-size: 0.84rem;
+  }
+
+  /* 7 AI Models Showcase */
+  .ia-models-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .ia-card {
+    padding: 22px 16px;
+    border-radius: var(--radius-md);
+  }
+
+  .ia-name {
+    font-size: 1.2rem;
+  }
+
+  .ia-style-tag {
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+  }
+
+  .ia-desc {
+    font-size: 0.88rem;
+    margin-bottom: 16px;
+    line-height: 1.55;
+  }
+
+  .ia-meta-info {
+    font-size: 0.76rem;
+    margin-bottom: 16px;
+    padding-top: 10px;
+  }
+
+  .btn-open-report {
+    min-height: 46px;
+    font-size: 0.88rem;
+    justify-content: center;
+  }
+
+  /* Methodology Section */
+  .method-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .method-card {
+    padding: 18px 16px;
+  }
+
+  .method-step {
+    font-size: 0.78rem;
+  }
+
+  .method-card h4 {
+    font-size: 1.02rem;
+  }
+
+  .method-card p {
+    font-size: 0.86rem;
+    line-height: 1.5;
+  }
+
+  /* License Box */
+  .license-box {
+    padding: 22px 16px;
+    gap: 16px;
+  }
+
+  .license-info h4 {
+    font-size: 1.1rem;
+  }
+
+  .license-info p {
+    font-size: 0.88rem;
+    line-height: 1.55;
+  }
+
+  .license-actions {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .btn-github-pill,
+  .license-badge-pill {
+    width: 100%;
+    justify-content: center;
+    min-height: 46px;
+    font-size: 0.86rem;
+  }
+
+  /* Footer */
+  .site-footer {
+    padding: 42px 0 24px;
+  }
+
+  .footer-grid {
+    gap: 26px;
+    margin-bottom: 30px;
+  }
+
+  .footer-brand h4 {
+    font-size: 1.05rem;
+  }
+
+  .footer-brand p {
+    font-size: 0.86rem;
+  }
+
+  .disclaimer-text {
+    font-size: 0.78rem;
+  }
+
+  .footer-col h5 {
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+  }
+
+  .footer-links {
+    gap: 8px;
+  }
+
+  .footer-links a {
+    display: inline-block;
+    padding: 4px 0;
+    font-size: 0.86rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+    font-size: 0.8rem;
+  }
+}
+
+/* Small Smartphone Devices (max-width: 480px) */
+@media (max-width: 480px) {
+  /* Brand and Nav adjustments on small screens */
+  .brand-text .brand-tag {
+    display: none; /* Keep brand minimal on 320-380px screens */
+  }
+
+  .nav-github-btn span {
+    display: none; /* Icon-only GitHub button to save critical navbar width */
+  }
+
+  .nav-github-btn {
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    justify-content: center;
+    border-radius: var(--radius-sm);
+  }
+
+  .nav-cta {
+    padding: 7px 10px;
+    font-size: 0.78rem;
+  }
+
+  .hero-title {
+    font-size: 1.7rem;
+  }
+
+  .hero-stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .stat-card {
+    padding: 12px 8px;
+  }
+
+  .stat-number {
+    font-size: 1.5rem;
+  }
+
+  .cand-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .pane-header {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }

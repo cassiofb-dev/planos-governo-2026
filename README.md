@@ -30,6 +30,7 @@ planos-governo-2026/
 ├── LICENSE                      # Licença MIT em nome de cassiofernando
 ├── robots.txt                   # Instruções de indexação para motores de busca
 ├── sitemap.xml                  # Mapa do site para otimização de SEO
+├── og-image.jpg                 # Imagem de pré-visualização para redes sociais (Open Graph / 1200x630)
 │
 ├── propostas/                   # Documentos oficiais originais em formato PDF
 │   ├── lula.pdf                 # Programa de Governo de Lula (PT) - 84 páginas (1.18 MB)
