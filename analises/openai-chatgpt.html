@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Relatório comparativo das diretrizes de governo 2027–2030 de Lula/Alckmin e Flávio Bolsonaro, com foco em dez temas econômicos, estratégicos e regionais.">
+<title>Relatório comparativo | Planos de Governo 2027–2030</title>
+<style>
+:root {
+  --ink: #172234;
+  --muted: #5d6878;
+  --paper: #ffffff;
+  --canvas: #f3f5f8;
+  --line: #dce2e9;
+  --navy: #18314f;
+  --blue: #2c5c91;
+  --gold: #e1b14d;
+  --green: #3e765e;
+  --soft-blue: #edf3fa;
+  --soft-gold: #fbf5e7;
+  --soft-green: #eef6f1;
+  --soft-gray: #f7f8fa;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--canvas);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.62;
+}
+a { color: var(--blue); text-underline-offset: 3px; }
+a:hover { text-decoration-thickness: 2px; }
+.hero {
+  background: radial-gradient(circle at 92% 15%, rgba(225,177,77,.22), transparent 24%), linear-gradient(120deg, #142942, #1d466c 70%, #285b78);
+  color: #fff;
+  padding: 54px 24px 48px;
+  border-bottom: 5px solid var(--gold);
+}
+.hero-inner, main, footer { max-width: 1120px; margin: 0 auto; }
+.eyebrow { text-transform: uppercase; letter-spacing: .13em; font-weight: 750; font-size: .78rem; color: #f1d797; margin: 0 0 12px; }
+h1 { font-size: clamp(2rem, 4vw, 3.15rem); line-height: 1.1; letter-spacing: -.035em; margin: 0; max-width: 900px; }
+.subtitle { max-width: 790px; font-size: 1.08rem; color: #e4ebf4; margin: 18px 0 0; }
+.meta { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 25px; }
+.meta span { border: 1px solid rgba(255,255,255,.27); border-radius: 999px; padding: 5px 11px; font-size: .82rem; color: #f4f6fa; }
+main { padding: 26px 20px 58px; }
+.notice { padding: 17px 19px; border: 1px solid var(--line); border-left: 4px solid var(--gold); border-radius: 10px; background: #fff; color: #344154; margin: 2px 0 24px; }
+.notice strong { color: var(--ink); }
+.grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.panel { background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: 22px; box-shadow: 0 5px 20px rgba(20,38,58,.035); }
+.panel h2, .panel h3 { margin-top: 0; }
+.panel h2 { font-size: 1.25rem; margin-bottom: 12px; }
+.panel p:last-child { margin-bottom: 0; }
+.candidate { font-weight: 800; font-size: .8rem; letter-spacing: .07em; text-transform: uppercase; margin-bottom: 9px; }
+.lula { color: var(--green); }
+.flavio { color: var(--blue); }
+.summary-table { margin-top: 24px; }
+.table-wrap { width: 100%; overflow-x: auto; background: #fff; border: 1px solid var(--line); border-radius: 12px; }
+table { border-collapse: collapse; width: 100%; min-width: 700px; }
+th, td { padding: 13px 15px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+th { background: #eaf0f6; color: #203751; font-size: .83rem; letter-spacing: .03em; }
+tbody tr:last-child td { border-bottom: 0; }
+td:first-child { font-weight: 750; width: 19%; }
+section.topic { scroll-margin-top: 20px; margin-top: 34px; }
+.section-head { display: flex; align-items: baseline; gap: 13px; border-bottom: 1px solid var(--line); padding-bottom: 11px; margin-bottom: 16px; }
+.number { display: inline-flex; justify-content: center; align-items: center; width: 35px; height: 35px; border-radius: 10px; background: var(--navy); color: white; font-weight: 800; flex: 0 0 35px; }
+h2 { font-size: clamp(1.45rem, 2.3vw, 1.95rem); line-height: 1.22; letter-spacing: -.02em; margin: 0; }
+.topic-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 15px; }
+.source-box { padding: 18px 19px; background: #fff; border: 1px solid var(--line); border-radius: 12px; }
+.source-box h3 { font-size: 1rem; margin: 0 0 8px; }
+.source-box p { margin: 0 0 10px; }
+.source-box p:last-child { margin-bottom: 0; }
+.assessment { margin-top: 14px; padding: 17px 19px; background: var(--soft-gold); border: 1px solid #ead7a8; border-radius: 12px; }
+.assessment h3 { margin: 0 0 5px; font-size: .97rem; color: #684c12; }
+.assessment p { margin: 0; }
+.refs { font-size: .83rem; color: var(--muted); margin-top: 12px; }
+.pill { display: inline-block; font-size: .75rem; line-height: 1.35; font-weight: 750; letter-spacing: .03em; color: #35465a; background: #e9edf2; border-radius: 5px; padding: 3px 7px; margin: 0 5px 5px 0; }
+.summary-cols { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.summary-card { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 17px; }
+.summary-card h3 { margin: 0 0 7px; font-size: 1rem; }
+.summary-card p { margin: 0; font-size: .95rem; }
+.note { color: var(--muted); font-size: .9rem; }
+.toc { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 18px; padding-left: 22px; margin-bottom: 0; }
+.toc li { padding: 2px 0; }
+.closing { background: var(--navy); color: white; border-radius: 15px; padding: 25px; margin-top: 20px; }
+.closing h3 { margin-top: 0; color: #f1d797; }
+.closing p:last-child { margin-bottom: 0; }
+.sources { margin-top: 35px; padding-top: 24px; border-top: 1px solid var(--line); }
+.sources h2 { font-size: 1.4rem; margin-bottom: 12px; }
+.sources ol { padding-left: 22px; }
+.sources li { padding-left: 3px; margin-bottom: 10px; }
+footer { padding: 0 20px 36px; color: var(--muted); font-size: .82rem; }
+@media (max-width: 760px) {
+  .hero { padding: 39px 20px 35px; }
+  main { padding: 18px 14px 42px; }
+  .grid, .topic-grid, .summary-cols { grid-template-columns: 1fr; }
+  .toc { grid-template-columns: 1fr; }
+  .panel { padding: 18px; }
+  .section-head { align-items: flex-start; }
+}
+@media print {
+  body { background: white; font-size: 10pt; }
+  .hero { background: white !important; color: var(--ink); border-bottom: 3px solid var(--gold); padding: 20px 0; }
+  .subtitle, .meta span { color: var(--muted); }
+  .meta span { border-color: var(--line); }
+  .eyebrow { color: var(--blue); }
+  main { padding: 15px 0; }
+  .panel, .source-box, .assessment, .summary-card, .closing { break-inside: avoid; box-shadow: none; }
+  .closing { background: white; color: var(--ink); border: 1px solid var(--line); }
+  .closing h3 { color: var(--ink); }
+  a { color: inherit; text-decoration: none; }
+  section.topic { break-before: auto; }
+  .table-wrap { overflow: visible; }
+  table { min-width: 0; font-size: 8.5pt; }
+  th, td { padding: 7px; }
+}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-inner">
+    <p class="eyebrow">Análise documental comparativa</p>
+    <h1>Planos de Governo 2027–2030</h1>
+    <p class="subtitle">Lula/Alckmin e Flávio Bolsonaro — dez eixos de comparação sobre política externa, energia, minerais estratégicos, equilíbrio fiscal, indústria, logística e desenvolvimento regional.</p>
+    <div class="meta">
+      <span>Base: documentos fornecidos</span>
+      <span>10 tópicos de análise</span>
+      <span>Foco em propostas e instrumentos</span>
+    </div>
+  </div>
+</header>
+<main>
+  <div class="notice"><strong>Como ler este relatório.</strong> A análise compara o que está escrito nas duas diretrizes, sem presumir que uma proposta já foi executada ou que seus resultados estejam garantidos. Números e avaliações sobre governos anteriores são apresentados como afirmações dos próprios documentos, não como dados auditados independentemente. As páginas indicadas são a numeração impressa nos planos.</div>
+
+  <section class="panel" id="visao-geral">
+    <h2>Resumo executivo</h2>
+    <div class="summary-cols">
+      <div class="summary-card">
+        <h3>Convergência</h3>
+        <p>Os dois planos querem que o Brasil agregue valor a minerais críticos e terras raras, fortaleça infraestrutura, amplie empregos e atraia investimentos. Ambos incluem ferrovias e rodovias, além de fontes renováveis e biocombustíveis.</p>
+      </div>
+      <div class="summary-card">
+        <h3>Diferença de método</h3>
+        <p>Lula propõe coordenação pública mais direta, política industrial, crédito e compras governamentais. Flávio enfatiza investimento privado, previsibilidade regulatória, abertura comercial e um Estado mais indutor/regulador do que empresário.</p>
+      </div>
+      <div class="summary-card">
+        <h3>Principal contraste fiscal</h3>
+        <p>Lula pretende manter o arcabouço fiscal e combinar contenção de despesas com crescimento e justiça tributária. Flávio propõe reformular as regras, buscar superávits primários e reduzir despesas administrativas e discricionárias.</p>
+      </div>
+    </div>
+    <div class="summary-table">
+      <h3>Mapa rápido dos dez tópicos</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Tópico</th><th>Lula/Alckmin</th><th>Flávio Bolsonaro</th><th>Leitura comparativa</th></tr></thead>
+          <tbody>
+            <tr><td>1. China x EUA</td><td>Soberania, multilateralismo e reação a medidas comerciais unilaterais; não detalha uma estratégia bilateral para a China.</td><td>Nomeia China e EUA como parceiros/mercados, com diplomacia pragmática, abertura e busca de investimento.</td><td>Autonomia e diversificação são comuns; diferem o enquadramento e as prioridades diplomáticas.</td></tr>
+            <tr><td>2. Petróleo</td><td>Continua a investir em petróleo, gás, refino e fertilizantes, articulando-os à transição energética.</td><td>Prioriza energia abundante e barata, refino, gás, infraestrutura e exploração de gás não convencional (fracking).</td><td>Ambos preservam petróleo e gás; diferem na ênfase operacional e regulatória.</td></tr>
+            <tr><td>3. Terras raras</td><td>Política específica, mapeamento, beneficiamento e agregação de valor com coordenação pública.</td><td>Verticalização com incentivos de mercado, licenciamento ágil e atração de capital e tecnologia externos.</td><td>Convergência forte no objetivo; diferença no instrumento de política industrial.</td></tr>
+            <tr><td>4. Déficit fiscal</td><td>Manter arcabouço fiscal, controlar crescimento do gasto e ampliar justiça tributária sem abandonar políticas sociais.</td><td>Reformular regras, reduzir dívida/PIB, obter superávits e cortar despesas administrativas.</td><td>Ambos declaram compromisso fiscal, mas divergem sobre regras, velocidade e composição do ajuste.</td></tr>
+            <tr><td>5. Industrialização</td><td>Nova Indústria Brasil, crédito, conteúdo local, compras públicas, inovação e descarbonização.</td><td>Investimento privado, segurança jurídica, competição, integração global e Estado como indutor.</td><td>Mesmo objetivo de modernização; papéis diferentes para Estado e mercado.</td></tr>
+            <tr><td>6. Rodovias x ferrovias</td><td>Plano multimodal, continuidade das concessões rodoviárias e aceleração das ferroviárias.</td><td>R$ 900 bilhões em quatro anos para vários modais, com projetos ferroviários e corredores logísticos nomeados.</td><td>Nenhum propõe abandonar rodovias; Flávio explicita mais projetos, sem separar orçamento por modal.</td></tr>
+            <tr><td>7. Nordeste</td><td>Energia renovável como base para indústria de baixo carbono, minerais e desenvolvimento regional.</td><td>Água, irrigação, Trem do Nordeste, Transnordestina, renováveis, terras raras e atração de novas indústrias.</td><td>Os dois veem potencial produtivo; Flávio lista mais obras regionais específicas.</td></tr>
+            <tr><td>8. Similaridades</td><td colspan="3">Agregar valor, inovar, desenvolver regiões, diversificar mercados, modernizar a logística e ampliar a segurança energética.</td></tr>
+            <tr><td>9. Diferenças</td><td colspan="3">Intensidade da coordenação estatal, modelo fiscal, mecanismos de financiamento industrial e orientação de política externa.</td></tr>
+            <tr><td>10. Conclusão</td><td colspan="3">A escolha entre os planos envolve sobretudo o método de implementação e a divisão de responsabilidades entre Estado e iniciativa privada.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel" style="margin-top:18px" aria-label="Navegação pelo relatório">
+    <h2>Índice</h2>
+    <ol class="toc">
+      <li><a href="#china-eua">Relação China x EUA</a></li>
+      <li><a href="#petroleo">Petróleo</a></li>
+      <li><a href="#terras-raras">Terras raras e minerais críticos</a></li>
+      <li><a href="#deficit">Déficit fiscal</a></li>
+      <li><a href="#industrializacao">Industrialização</a></li>
+      <li><a href="#logistica">Rodovias x ferrovias</a></li>
+      <li><a href="#nordeste">Nordeste</a></li>
+      <li><a href="#similaridades">Similaridades</a></li>
+      <li><a href="#diferencas">Diferenças</a></li>
+      <li><a href="#conclusao">Conclusão</a></li>
+    </ol>
+  </section>
+
+  <section class="topic" id="china-eua">
+    <div class="section-head"><span class="number">1</span><h2>Relação China x EUA</h2></div>
+    <div class="topic-grid">
+      <article class="source-box">
+        <h3><span class="candidate lula">Lula/Alckmin</span></h3>
+        <p>O plano coloca a soberania e a capacidade de fazer escolhas sem subordinação estratégica no centro da política externa. Defende uma política universalista, a diversificação de parcerias, a abertura de mercados e a atuação com base nas normas internacionais e no multilateralismo. No diagnóstico apresentado, menciona três ondas de tarifas impostas pelo governo Trump e cita o Plano Brasil Soberano como resposta de proteção às empresas, ao emprego e à renda.</p>
+        <p>O texto não formula uma estratégia bilateral específica para a China. Sua ênfase está em não se subordinar a outras potências, resistir a imposições unilaterais e ampliar a cooperação com várias regiões.</p>
+        <p class="refs">Referência: Plano Lula, pp. 7, 12 e 77–80.</p>
+      </article>
+      <article class="source-box">
+        <h3><span class="candidate flavio">Flávio Bolsonaro</span></h3>
+        <p>Propõe diplomacia “pragmática”, guiada por interesses comerciais e não por afinidade ideológica. Nomeia a China, os Estados Unidos, a União Europeia e os mercados asiáticos como interlocutores com os quais o Brasil deve negociar. Também defende soluções diplomáticas para sanções comerciais impostas por Estados Unidos, China e Europa a produtos brasileiros.</p>
+        <p>O plano propõe retomar o processo de adesão à OCDE, ampliar a abertura comercial, facilitar o acesso a bens de capital, tecnologia e insumos importados e fortalecer a inserção em cadeias globais de valor. O texto dá destaque à reconstrução das relações com parceiros tradicionais, incluindo os EUA, mas não recomenda exclusividade comercial com Washington.</p>
+        <p class="refs">Referência: Plano Flávio, pp. 53 e 61–63.</p>
+      </article>
+    </div>
+    <div class="assessment"><h3>Leitura comparativa</h3><p>Ambos defendem soberania econômica e diversificação de relações, mas contam histórias diferentes sobre a política externa. Lula enfatiza resistir ao unilateralismo e proteger o país de choques comerciais; Flávio enfatiza pragmatismo, abertura e investimento, com menção mais explícita tanto à China quanto aos EUA. A ausência de uma proposta bilateral detalhada no plano Lula impede concluir, com base apenas nesses documentos, qual seria sua política específica para cada potência.</p></div>
+  </section>
+
+  <section class="topic" id="petroleo">
+    <div class="section-head"><span class="number">2</span><h2>Petróleo</h2></div>
+    <div class="topic-grid">
+      <article class="source-box">
+        <h3><span class="candidate lula">Lula/Alckmin</span></h3>
+        <p>O petróleo permanece como parte da estratégia de segurança energética e de adensamento produtivo. O texto relata a retomada de investimentos da Petrobras em petróleo e gás, refino, derivados, fertilizantes, indústria naval e petroquímica. Também propõe mitigar a volatilidade dos preços internacionais para reduzir a transmissão de choques externos aos consumidores brasileiros.</p>
+        <p>A extração e o gás convivem com uma transição energética que procura aumentar renováveis, biometano, biocombustíveis e hidrogênio de baixo carbono. Portanto, o plano não apresenta uma saída rápida do petróleo: procura combinar produção, segurança de abastecimento, empregos industriais e redução gradual de emissões.</p>
+        <p class="refs">Referência: Plano Lula, pp. 63–67.</p>
+      </article>
+      <article class="source-box">
+        <h3><span class="candidate flavio">Flávio Bolsonaro</span></h3>
+        <p>O plano define como objetivo uma energia abundante e barata, e prevê investimento em refino, processamento, escoamento e transporte de combustíveis e gás. Defende ampliar a rede de gás, modernizar o refino para aproveitar petróleo nacional, incentivar fertilizantes produzidos com gás e permitir a exploração de gás não convencional por fraturamento hidráulico (fracking), com responsabilidade ambiental e cumprimento da lei.</p>
+        <p>Também aposta em concorrência, regras estáveis e investimento privado para expandir infraestrutura energética. O plano promove biocombustíveis e outras fontes renováveis, associando energia mais barata à competitividade industrial e à atração de data centers.</p>
+        <p class="refs">Referência: Plano Flávio, pp. 52–53.</p>
+      </article>
+    </div>
+    <div class="assessment"><h3>Leitura comparativa</h3><p>Os dois planos mantêm petróleo e gás na matriz estratégica e não tratam a transição energética como interrupção imediata dos combustíveis fósseis. Lula integra a atuação da Petrobras a uma política energética coordenada e à proteção contra volatilidade; Flávio detalha mais o objetivo de reduzir custos, ampliar a infraestrutura de gás e permitir fracking. O plano de Flávio não explicita, nessas páginas, uma decisão específica de privatização da Petrobras; por isso, essa conclusão não deve ser presumida apenas a partir da defesa de concorrência ou de desestatização caso a caso.</p></div>
+  </section>
+
+  <section class="topic" id="terras-raras">
+    <div class="section-head"><span class="number">3</span><h2>Terras raras e minerais críticos</h2></div>
+    <div class="topic-grid">
+      <article class="source-box">
+        <h3><span class="candidate lula">Lula/Alckmin</span></h3>
+        <p>Propõe uma política específica para minerais críticos e terras raras, com organização das cadeias produtivas, diferenciação de usos tecnológicos, mapeamento regional, beneficiamento e agregação de valor. O objetivo declarado é evitar que o Brasil apenas exporte matéria-prima estratégica e garantir posição soberana nas cadeias globais de valor.</p>
+        <p>A agenda está conectada à Nova Indústria Brasil, à internalização de tecnologias, à produção local, à digitalização industrial e ao fortalecimento de setores de média e alta intensidade tecnológica. O documento também associa a energia renovável nordestina a atividades eletrointensivas, como processamento de minerais críticos.</p>
+        <p class="refs">Referência: Plano Lula, pp. 50–53 e 56.</p>
+      </article>
+      <article class="source-box">
+        <h3><span class="candidate flavio">Flávio Bolsonaro</span></h3>
+        <p>Apresenta terras raras, lítio, nióbio, grafite, cobre, níquel e urânio como insumos de semicondutores, baterias, turbinas eólicas, veículos elétricos, defesa e inteligência artificial. A proposta é transformar o mineral no Brasil, aproximando mineração, energia competitiva, data centers e novas tecnologias.</p>
+        <p>O Estado atuaria como regulador e coordenador, e não como empresário. O plano cita marco regulatório claro, licenciamento técnico e ágil, atração de capital estrangeiro e tecnologia, incentivos de mercado para verticalização, governança, transparência e transferência de conhecimento. O Nordeste é mencionado como região com potencial para terras raras e energia limpa.</p>
+        <p class="refs">Referência: Plano Flávio, pp. 55 e 60.</p>
+      </article>
+    </div>
+    <div class="assessment"><h3>Leitura comparativa</h3><p>Este é um dos maiores pontos de convergência: os dois querem deixar de exportar apenas o recurso bruto e capturar mais valor industrial e tecnológico no país. A diferença é o instrumento. Lula nomeia uma política pública específica e uma coordenação integrada com financiamento, compras públicas e conteúdo local; Flávio coloca mais ênfase em incentivos de mercado, segurança regulatória, licenciamento e capital/tecnologia privados e externos.</p></div>
+  </section>
+
+  <section class="topic" id="deficit">
+    <div class="section-head"><span class="number">4</span><h2>Déficit fiscal</h2></div>
+    <div class="topic-grid">
+      <article class="source-box">
+        <h3><span class="candidate lula">Lula/Alckmin</span></h3>
+        <p>Propõe manter o arcabouço fiscal, controlar o crescimento das despesas e melhorar a eficiência e a qualidade do gasto, sem prejudicar a recomposição de políticas sociais. O resultado fiscal seria alcançado por uma combinação de crescimento econômico, controle de despesas primárias, combate a privilégios e distorções e justiça tributária.</p>
+        <p>O plano defende tributação maior sobre rendas muito elevadas e revisão de benefícios fiscais, além de alívio tributário para faixas de renda mais baixas. Na apresentação, projeta déficit primário próximo de 0,4% do PIB ao fim de 2026; trata-se de uma projeção declarada no documento, não de uma verificação independente neste relatório.</p>
+        <p class="refs">Referência: Plano Lula, pp. 10–12 e 48–49.</p>
+      </article>
+      <article class="source-box">
+        <h3><span class="candidate flavio">Flávio Bolsonaro</span></h3>
+        <p>Propõe reformular as regras fiscais para estabilizar e reduzir a dívida pública, buscar superávits primários, controlar despesas discricionárias dos três Poderes e limitar crédito subsidiado com recursos do Tesouro. O texto vincula disciplina fiscal à queda dos juros, ao controle da inflação e à redução da relação dívida/PIB.</p>
+        <p>Como medidas administrativas, prevê reforma do processo orçamentário, avaliação de políticas públicas, redução de despesas, diminuição de cargos comissionados e corte de pelo menos dez ministérios. Também pretende rever a reforma tributária em curso e reduzir a carga sobre produção e consumo. Não define, nessas páginas, uma meta numérica anual de superávit ou um cronograma fechado para a queda da dívida.</p>
+        <p class="refs">Referência: Plano Flávio, pp. 68–71.</p>
+      </article>
+    </div>
+    <div class="assessment"><h3>Leitura comparativa</h3><p>Ambos associam estabilidade macroeconômica, melhor gasto público e controle fiscal à capacidade de crescer. O contraste está na composição e na governança do ajuste. Lula defende preservar o arcabouço e combinar contenção do gasto com expansão econômica e progressividade tributária; Flávio propõe reescrever regras fiscais, perseguir superávits primários, cortar estruturas administrativas e reduzir impostos sobre produção e consumo. Para uma comparação quantitativa completa, faltam nos dois textos planilhas integradas com receitas, despesas, premissas macroeconômicas e impactos anuais de cada proposta.</p></div>
+  </section>
+
+  <section class="topic" id="industrializacao">
+    <div class="section-head"><span class="number">5</span><h2>Industrialização</h2></div>
+    <div class="topic-grid">
+      <article class="source-box">
+        <h3><span class="candidate lula">Lula/Alckmin</span></h3>
+        <p>A estratégia tem como eixo a Nova Indústria Brasil (NIB), a neoindustrialização e a integração entre política industrial, ciência, tecnologia, inovação e comércio exterior. O texto enumera objetivos: elevar produtividade, agregar valor às cadeias, fortalecer soberania tecnológica, gerar empregos qualificados e descarbonizar a economia.</p>
+        <p>Os instrumentos incluem financiamento direcionado, crédito público e privado, compras governamentais, concessões, regulações e benefícios vinculados a conteúdo local e valor agregado nacional. O plano afirma que a NIB teria disponibilizado R$ 860 bilhões em financiamentos entre 2023 e 2026 pelo Plano Mais Produção; o número é aqui atribuído ao próprio documento.</p>
+        <p class="refs">Referência: Plano Lula, pp. 48–53.</p>
+      </article>
+      <article class="source-box">
+        <h3><span class="candidate flavio">Flávio Bolsonaro</span></h3>
+        <p>Apresenta crescimento sustentado, investimento privado, segurança jurídica e competitividade como fundamentos para a expansão produtiva. Propõe regras estáveis, licenciamento ambiental com prazos definidos, abertura comercial para acesso a bens de capital e insumos e integração às cadeias globais de valor.</p>
+        <p>O Estado deve criar condições e induzir inovação por compras públicas, GovTech e pesquisa, mas o documento rejeita o Estado como empresário em áreas como minerais críticos e defende desestatização caso a caso. Energia limpa competitiva, terras raras, inteligência artificial, data centers e transferência de tecnologia aparecem como componentes de uma estratégia para fortalecer a indústria.</p>
+        <p class="refs">Referência: Plano Flávio, pp. 49–50, 55–57 e 64.</p>
+      </article>
+    </div>
+    <div class="assessment"><h3>Leitura comparativa</h3><p>Os dois querem modernizar a indústria, elevar produtividade, desenvolver tecnologia e atrair investimento. Lula oferece um modelo mais explicitamente dirigido por política industrial e instrumentos públicos, com conteúdo local e agregação de valor como condições. Flávio enfatiza ambiente de negócios, investimento privado, concorrência, abertura e previsibilidade regulatória, mantendo um Estado indutor em pesquisa e compras públicas. A divergência não é “Estado versus ausência de Estado”, mas quais instrumentos públicos devem conduzir a transformação produtiva.</p></div>
+  </section>
+
+  <section class="topic" id="logistica">
+    <div class="section-head"><span class="number">6</span><h2>Rodovias x ferrovias</h2></div>
+    <div class="topic-grid">
+      <article class="source-box">
+        <h3><span class="candidate lula">Lula/Alckmin</span></h3>
+        <p>O plano trabalha com uma infraestrutura multimodal: rodoviária, ferroviária, hidroviária, aérea e marítima. Prevê continuidade do Novo PAC, concessões e planejamento logístico de longo prazo, com priorização de projetos capazes de reduzir desigualdades regionais e emissões.</p>
+        <p>Sobre as concessões, propõe manter o ritmo das rodovias e intensificar as ferrovias por meio de leilões de novos projetos e repactuação de contratos existentes. O documento cita investimento em infraestrutura de R$ 280 bilhões em 2025 e expectativa de R$ 300 bilhões em 2026 no relato sobre o ciclo anterior; também menciona execução de R$ 1,3 trilhão no Novo PAC. Esses números não devem ser comparados diretamente com a meta futura de Flávio, pois se referem a períodos e escopos distintos.</p>
+        <p class="refs">Referência: Plano Lula, pp. 11–12 e 52–54.</p>
+      </article>
+      <article class="source-box">
+        <h3><span class="candidate flavio">Flávio Bolsonaro</span></h3>
+        <p>Propõe investir R$ 900 bilhões em quatro anos em rodovias, hidrovias, portos, aeroportos e ferrovias, com Corredores Logísticos Inteligentes para reduzir custos de transporte e conectar o Centro-Oeste aos portos. O valor é uma meta declarada para o conjunto dos modais; o plano não apresenta uma repartição orçamentária por modal.</p>
+        <p>Nomeia projetos ferroviários e hidroviários: destravar a Ferrogrão, viabilizar um trem de cargas entre Mato Grosso, oeste do Paraná e Santa Catarina, criar o Trem do Nordeste para passageiros, concluir e ampliar a Transnordestina e destravar a Hidrovia do Tapajós com responsabilidade ambiental e diálogo com comunidades.</p>
+        <p class="refs">Referência: Plano Flávio, p. 51, com conexões regionais na p. 60.</p>
+      </article>
+    </div>
+    <div class="assessment"><h3>Leitura comparativa</h3><p>Não há uma oposição simples entre rodovias e ferrovias: os dois planos defendem os dois modais. Lula enfatiza a carteira multimodal, concessões e critérios de integração e descarbonização; Flávio apresenta mais projetos nomeados e uma meta global de investimento para quatro anos. Como nenhum dos dois fornece, nesses trechos, uma tabela completa de recursos por obra e modal, não é possível afirmar qual reservaria mais dinheiro às ferrovias em comparação com as rodovias.</p></div>
+  </section>
+
+  <section class="topic" id="nordeste">
+    <div class="section-head"><span class="number">7</span><h2>Nordeste</h2></div>
+    <div class="topic-grid">
+      <article class="source-box">
+        <h3><span class="candidate lula">Lula/Alckmin</span></h3>
+        <p>Enxerga a região como polo de desenvolvimento industrial ligado à energia limpa. O plano afirma que o Nordeste concentra cerca de 70% da geração eólica e solar do país e propõe atrair indústrias eletrointensivas, incluindo siderurgia verde, fertilizantes, química, cimento, alumínio, processamento de minerais críticos e hidrogênio de baixo carbono.</p>
+        <p>A proposta se conecta a uma visão de desenvolvimento regional, transição energética justa e infraestrutura para água e produção. O documento também menciona obras de segurança hídrica, canais, adutoras, reservatórios e cisternas, bem como financiamento climático voltado ao Semiárido e valorização da Caatinga.</p>
+        <p class="refs">Referência: Plano Lula, pp. 56 e 71–73.</p>
+      </article>
+      <article class="source-box">
+        <h3><span class="candidate flavio">Flávio Bolsonaro</span></h3>
+        <p>Coloca água e irrigação no centro da estratégia regional, enumerando obras como os ramais do Apodi, do Salgado e do Piancó, a Adutora do Seridó, o Canal do Xingó, canais do Sertão e a duplicação do Eixão das Águas do Ceará. Propõe expandir o perímetro irrigado do Baixio do Irecê e concluir a Transnordestina, ampliando o escopo para Paraíba e Rio Grande do Norte.</p>
+        <p>Também prevê o Trem do Nordeste, uma ligação de passageiros de aproximadamente 1.400 km entre Salvador, Aracaju, Maceió, Recife, João Pessoa, Natal e Fortaleza. Combina essas obras com energia solar e eólica, terras raras, data centers e atração de novas indústrias e turismo.</p>
+        <p class="refs">Referência: Plano Flávio, pp. 51–53 e 60.</p>
+      </article>
+    </div>
+    <div class="assessment"><h3>Leitura comparativa</h3><p>Os dois tratam o Nordeste como região com potencial de crescimento, e não apenas como destino de políticas compensatórias. Ambos ligam energia renovável, infraestrutura e empregos. Lula concentra a narrativa em industrialização verde e cadeias produtivas; Flávio faz uma enumeração mais operacional de obras hídricas, irrigação e conexões ferroviárias, além de articular turismo, agroprodução, terras raras e energia aos investimentos privados.</p></div>
+  </section>
+
+  <section class="topic" id="similaridades">
+    <div class="section-head"><span class="number">8</span><h2>Similaridades</h2></div>
+    <div class="panel">
+      <p>Apesar das diferenças ideológicas e dos instrumentos escolhidos, há convergências econômicas relevantes nos dois documentos:</p>
+      <p><span class="pill">Agregação de valor</span><span class="pill">Minerais críticos</span><span class="pill">Segurança energética</span><span class="pill">Infraestrutura</span><span class="pill">Tecnologia</span><span class="pill">Desenvolvimento regional</span><span class="pill">Investimento</span></p>
+      <ol>
+        <li><strong>Beneficiar recursos no Brasil.</strong> Ambos querem que terras raras e minerais críticos alimentem cadeias produtivas domésticas, em vez de serem exportados apenas como matéria-prima.</li>
+        <li><strong>Indústria mais tecnológica.</strong> Inteligência artificial, digitalização, pesquisa, inovação e atividades de maior valor agregado aparecem nos dois planos, embora com instrumentos distintos.</li>
+        <li><strong>Infraestrutura como condição de competitividade.</strong> Os dois incluem rodovias, ferrovias e outros modais e reconhecem a necessidade de reduzir gargalos logísticos.</li>
+        <li><strong>Energia como ativo industrial.</strong> Petróleo e gás continuam relevantes, e ambos também defendem renováveis e biocombustíveis. Energia confiável é vinculada a preços, indústria e geração de empregos.</li>
+        <li><strong>Nordeste como oportunidade produtiva.</strong> A água, a energia renovável e as conexões de transporte são vistas como alavancas para produzir, atrair empresas e reduzir distâncias regionais.</li>
+        <li><strong>Responsabilidade fiscal declarada.</strong> Ambos afirmam que a estabilidade das contas importa para o desenvolvimento; a diferença está no desenho da regra fiscal e no equilíbrio entre despesas, tributos e investimento.</li>
+      </ol>
+      <p class="refs">Referências transversais: Plano Lula, pp. 48–56 e 63–80; Plano Flávio, pp. 49–64 e 68–71.</p>
+    </div>
+  </section>
+
+  <section class="topic" id="diferencas">
+    <div class="section-head"><span class="number">9</span><h2>Diferenças</h2></div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Dimensão</th><th>Lula/Alckmin</th><th>Flávio Bolsonaro</th><th>Implicação analítica</th></tr></thead>
+        <tbody>
+          <tr><td>Papel do Estado</td><td>Coordenação pública mais direta, política industrial, crédito, compras públicas e incentivos associados a conteúdo local e valor agregado.</td><td>Estado como regulador e indutor, com maior ênfase em segurança jurídica, concorrência, capital privado e abertura.</td><td>A diferença afeta quem lidera investimentos, quais condições são exigidas e como se pretende internalizar tecnologia.</td></tr>
+          <tr><td>Modelo fiscal</td><td>Manter o arcabouço, controlar o crescimento da despesa, perseguir justiça tributária e preservar políticas sociais.</td><td>Reformular regras, entregar superávits, reduzir dívida/PIB e cortar despesas administrativas e discricionárias.</td><td>Os dois prometem disciplina, mas divergem em regra, velocidade e distribuição dos custos do ajuste.</td></tr>
+          <tr><td>Política externa</td><td>Universalismo, multilateralismo, autonomia e resposta a pressões tarifárias unilaterais.</td><td>Pragmatismo comercial, reaproximação com parceiros tradicionais, avanço na OCDE e abertura econômica.</td><td>Há convergência na diversificação de mercados, mas contraste no diagnóstico da atuação diplomática e no peso dado à abertura.</td></tr>
+          <tr><td>Petróleo e energia</td><td>Petrobras e investimento coordenado em petróleo, gás, refino e fertilizantes dentro de uma transição justa.</td><td>Energia barata, mais infraestrutura de gás e refino, possibilidade de fracking e atração de investimento sob regras estáveis.</td><td>Ambos mantêm combustíveis fósseis no horizonte; diferem no foco em coordenação estatal versus custos, concorrência e regulação.</td></tr>
+          <tr><td>Terras raras</td><td>Política específica com mapeamento, beneficiamento e encadeamento industrial soberano.</td><td>Verticalização com incentivos de mercado, licenciamento ágil, capital e tecnologia externos.</td><td>O objetivo é semelhante; a diferença está na intensidade e no desenho da política industrial.</td></tr>
+          <tr><td>Logística</td><td>Planejamento multimodal e continuidade de concessões; expansão de leilões ferroviários e rodoviários.</td><td>Meta agregada de R$ 900 bilhões e projetos identificados, como Ferrogrão, Trem do Nordeste e Transnordestina.</td><td>Flávio explicita mais obras, mas os textos não permitem medir comparativamente os recursos finais por projeto.</td></tr>
+          <tr><td>Nordeste</td><td>Foco explícito em indústria verde e energia renovável como base para novas cadeias produtivas.</td><td>Foco explícito em obras hídricas, irrigação, trem de passageiros, ferrovia de cargas e atração de investimento para energia/minerais.</td><td>São ênfases complementares em parte; os planos diferem no conjunto de projetos que destacam.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="assessment"><h3>O que realmente separa os planos</h3><p>A diferença mais estrutural não está em querer ou não industrializar, construir ferrovias ou aproveitar terras raras. Está em como fazer isso: Lula atribui maior centralidade a planejamento e instrumentos públicos coordenados; Flávio coloca maior peso na iniciativa privada, nas regras estáveis, na concorrência e na abertura comercial. A consequência fiscal depende de detalhes de execução que as diretrizes, isoladamente, não quantificam de forma suficiente.</p></div>
+  </section>
+
+  <section class="topic" id="conclusao">
+    <div class="section-head"><span class="number">10</span><h2>Conclusão</h2></div>
+    <div class="closing">
+      <h3>Síntese final</h3>
+      <p>O plano Lula/Alckmin descreve um projeto de desenvolvimento orientado por política industrial, coordenação estatal, uso de financiamento público e privado, agregação de valor nacional e transição energética com preocupação distributiva. Na política externa, destaca autonomia estratégica, multilateralismo e reação a medidas unilaterais de comércio.</p>
+      <p>O plano de Flávio Bolsonaro descreve um projeto que busca crescimento por investimento privado, regras estáveis, abertura comercial, simplificação regulatória, redução da dívida e energia mais barata. Para minerais críticos, infraestrutura e tecnologia, o Estado deve induzir e regular, mas a alavanca central proposta é a mobilização de capital, conhecimento e iniciativa empresarial.</p>
+      <p>Há terreno comum em industrialização, recursos críticos, infraestrutura multimodal, renováveis, segurança energética e desenvolvimento do Nordeste. A divergência principal é o modo de execução: maior coordenação estatal e política industrial no primeiro documento; maior centralidade do mercado, do investimento privado e do ajuste fiscal no segundo.</p>
+      <p><strong>Conclusão analítica:</strong> os textos são diretrizes políticas, não planos operacionais completos. Para avaliar viabilidade e impacto, seria necessário confrontar cada promessa com cronograma, fontes de financiamento, estimativas de custo, metas anuais, instrumentos legais, riscos de execução e indicadores de resultado. Os números e avaliações apresentados pelos próprios planos precisam de verificação independente antes de serem tratados como resultados comprovados.</p>
+    </div>
+  </section>
+
+  <section class="sources" id="fontes">
+    <h2>Fontes e critério de referência</h2>
+    <ol>
+      <li id="fonte1"><strong>Programa de Governo Lula Presidente / Geraldo Alckmin — Diretrizes para o Programa de Transformação do Brasil.</strong> Documento fornecido pelo usuário, 84 páginas. As citações usam a paginação impressa no arquivo, especialmente pp. 7–12, 48–56, 63–67 e 77–80.</li>
+      <li id="fonte2"><strong>Flávio Bolsonaro — Para o Brasil Vencer o Atraso: Diretrizes do Plano de Governo 2027–2030.</strong> Documento fornecido pelo usuário, 76 páginas. As citações usam a paginação impressa no arquivo, especialmente pp. 49–64 e 68–71.</li>
+    </ol>
+    <p class="note">Nota metodológica: as avaliações acima distinguem propostas explícitas, ênfases e lacunas de detalhamento. A falta de uma proposta em determinado trecho não prova que o tema não possa ser tratado em outras políticas; indica apenas que os documentos comparados não fornecem ali o mesmo nível de especificidade.</p>
+  </section>
+</main>
+<footer>Relatório preparado a partir dos dois arquivos disponibilizados nesta conversa. Formato HTML independente, adaptável à tela e adequado para impressão.</footer>
+</body>
+</html>

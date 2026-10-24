@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Relatório Comparativo — Programas de Governo 2027–2030</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f4f0e6;
+    --paper-2:#eae3d3;
+    --ink:#16150f;
+    --ink-soft:#413d34;
+    --muted:#877e6d;
+    --accent:#b0341f;
+    --line:rgba(22,21,15,.16);
+    --line-strong:rgba(22,21,15,.38);
+    --maxw:1180px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Newsreader",Georgia,serif;
+    font-size:17.5px;
+    line-height:1.68;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  body::before{
+    content:"";
+    position:fixed;inset:0;z-index:9999;pointer-events:none;
+    opacity:.055;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px;}
+
+  /* ---------- HEADER ---------- */
+  header.masthead{
+    background:var(--ink);
+    color:var(--paper);
+    padding:78px 0 64px;
+    position:relative;
+    overflow:hidden;
+  }
+  header.masthead::after{
+    content:"";
+    position:absolute;right:-140px;top:-120px;
+    width:520px;height:520px;
+    background:radial-gradient(circle at 30% 30%, rgba(176,52,31,.55), transparent 62%);
+    pointer-events:none;
+  }
+  .kicker{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:11.5px;letter-spacing:.34em;text-transform:uppercase;
+    color:rgba(244,240,230,.62);
+    display:flex;gap:14px;align-items:center;flex-wrap:wrap;
+  }
+  .kicker .dot{width:7px;height:7px;background:var(--accent);display:inline-block;}
+  h1{
+    font-family:"Fraunces",serif;
+    font-weight:600;
+    font-variation-settings:"SOFT" 0,"WONK" 1,"opsz" 120;
+    font-size:clamp(2.7rem,7vw,5.4rem);
+    line-height:.94;
+    letter-spacing:-.022em;
+    margin:26px 0 0;
+    max-width:15ch;
+  }
+  h1 em{font-style:italic;color:#e9b8a9;}
+  .deck{
+    margin-top:28px;
+    max-width:58ch;
+    font-size:1.18rem;
+    line-height:1.62;
+    color:rgba(244,240,230,.82);
+  }
+  .meta-row{
+    margin-top:46px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+    gap:1px;
+    background:rgba(244,240,230,.18);
+    border:1px solid rgba(244,240,230,.18);
+  }
+  .meta-cell{background:var(--ink);padding:18px 20px;}
+  .meta-cell span{
+    display:block;
+    font-family:"IBM Plex Mono",monospace;
+    font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;
+    color:rgba(244,240,230,.5);
+  }
+  .meta-cell strong{
+    display:block;margin-top:8px;
+    font-family:"Fraunces",serif;font-weight:500;font-size:1.06rem;line-height:1.35;
+  }
+
+  /* ---------- NAV ---------- */
+  nav.eixos{
+    position:sticky;top:0;z-index:100;
+    background:rgba(244,240,230,.93);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  nav.eixos ol{
+    list-style:none;display:flex;gap:0;overflow-x:auto;
+    max-width:var(--maxw);margin:0 auto;padding:0 20px;
+    scrollbar-width:thin;
+  }
+  nav.eixos li{flex:0 0 auto;}
+  nav.eixos a{
+    display:block;
+    padding:15px 15px;
+    font-family:"IBM Plex Mono",monospace;
+    font-size:11px;letter-spacing:.13em;text-transform:uppercase;
+    color:var(--muted);text-decoration:none;
+    border-bottom:2px solid transparent;
+    transition:color .25s ease,border-color .25s ease,letter-spacing .3s ease;
+    white-space:nowrap;
+  }
+  nav.eixos a:hover{color:var(--accent);border-color:var(--accent);letter-spacing:.19em;}
+
+  /* ---------- SECTIONS ---------- */
+  main{padding-bottom:80px;}
+  .doc-note{
+    padding:58px 0 8px;
+  }
+  .doc-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:26px;}
+  .doc-card{
+    border-top:3px solid var(--ink);
+    padding-top:18px;
+  }
+  .doc-card.alt{border-top-color:var(--accent);}
+  .doc-card h3{font-family:"Fraunces",serif;font-size:1.32rem;font-weight:600;line-height:1.22;}
+  .doc-card p{font-size:.98rem;color:var(--ink-soft);margin-top:10px;}
+  .doc-card .tag{
+    font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.24em;
+    text-transform:uppercase;color:var(--muted);
+  }
+
+  section.topic{padding:76px 0 12px;scroll-margin-top:66px;}
+  .topic-head{display:grid;grid-template-columns:120px 1fr;gap:26px;align-items:start;}
+  .num{
+    font-family:"Fraunces",serif;
+    font-size:clamp(3.2rem,7vw,5.2rem);
+    line-height:.8;font-weight:300;
+    color:transparent;
+    -webkit-text-stroke:1.1px var(--line-strong);
+    letter-spacing:-.03em;
+  }
+  .topic h2{
+    font-family:"Fraunces",serif;font-weight:600;
+    font-size:clamp(1.85rem,3.6vw,2.75rem);
+    line-height:1.04;letter-spacing:-.018em;
+    max-width:22ch;
+  }
+  .topic .lede{
+    margin-top:14px;max-width:70ch;
+    font-size:1.08rem;color:var(--ink-soft);
+    border-left:2px solid var(--accent);padding-left:18px;
+  }
+
+  .compare{
+    display:grid;grid-template-columns:1fr 1fr;gap:0;
+    margin-top:44px;
+    border-top:1px solid var(--line);
+  }
+  .panel{padding:32px 34px 38px;}
+  .panel:first-child{border-right:1px solid var(--line);background:linear-gradient(180deg,rgba(234,227,211,.5),rgba(234,227,211,0) 220px);}
+  .panel:last-child{background:linear-gradient(180deg,rgba(176,52,31,.05),rgba(176,52,31,0) 220px);}
+  .panel .p-tag{
+    font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--muted);
+    display:flex;align-items:center;gap:10px;
+  }
+  .panel .p-tag::before{content:"";width:26px;height:2px;background:var(--ink);}
+  .panel:last-child .p-tag::before{background:var(--accent);}
+  .panel h4{
+    font-family:"Fraunces",serif;font-size:1.16rem;font-weight:600;
+    margin:12px 0 14px;line-height:1.3;
+  }
+  .panel ul{list-style:none;}
+  .panel li{
+    position:relative;padding-left:20px;margin-bottom:13px;font-size:.99rem;
+  }
+  .panel li::before{
+    content:"";position:absolute;left:0;top:.72em;
+    width:7px;height:7px;background:var(--accent);
+  }
+  blockquote{
+    margin:18px 0;padding:16px 20px;
+    background:rgba(22,21,15,.045);
+    border-left:3px solid var(--ink);
+    font-style:italic;font-size:.96rem;color:var(--ink-soft);
+  }
+  .panel:last-child blockquote{border-left-color:var(--accent);}
+  blockquote cite{
+    display:block;margin-top:9px;font-style:normal;
+    font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--muted);
+  }
+  .reading{
+    margin:0 0 0;padding:26px 34px;
+    background:var(--ink);color:var(--paper);
+    display:grid;grid-template-columns:180px 1fr;gap:22px;align-items:baseline;
+  }
+  .reading .r-label{
+    font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.24em;
+    text-transform:uppercase;color:#e9b8a9;
+  }
+  .reading p{font-size:1.02rem;line-height:1.66;color:rgba(244,240,230,.86);}
+  .alert{
+    margin-top:16px;font-family:"IBM Plex Mono",monospace;
+    font-size:11px;letter-spacing:.08em;color:var(--accent);
+    text-transform:uppercase;
+  }
+
+  /* ---------- LISTS (similaridades / diferenças) ---------- */
+  .idx-list{margin-top:38px;border-top:1px solid var(--line);}
+  .idx-item{
+    display:grid;grid-template-columns:64px 1fr;gap:22px;
+    padding:22px 0;border-bottom:1px solid var(--line);
+    transition:background .3s ease,padding-left .3s ease;
+  }
+  .idx-item:hover{background:rgba(176,52,31,.05);padding-left:12px;}
+  .idx-item .idx-n{
+    font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.18em;
+    color:var(--accent);padding-top:5px;
+  }
+  .idx-item h5{font-family:"Fraunces",serif;font-size:1.16rem;font-weight:600;line-height:1.3;}
+  .idx-item p{margin-top:8px;font-size:.985rem;color:var(--ink-soft);max-width:82ch;}
+
+  .diff-table{margin-top:38px;border-top:2px solid var(--ink);}
+  .diff-row{
+    display:grid;grid-template-columns:200px 1fr 1fr;gap:0;
+    border-bottom:1px solid var(--line);
+  }
+  .diff-row > div{padding:20px 22px;}
+  .diff-row .axis{
+    font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--ink);
+    background:rgba(22,21,15,.045);
+  }
+  .diff-row .a{border-right:1px solid var(--line);font-size:.955rem;color:var(--ink-soft);}
+  .diff-row .b{border-left:1px solid var(--line);font-size:.955rem;color:var(--ink-soft);background:rgba(176,52,31,.04);}
+  .diff-head{
+    background:var(--ink);color:var(--paper);
+    font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;
+  }
+  .diff-head > div{padding:16px 22px;border:0;background:var(--ink);}
+
+  /* ---------- CONCLUSÃO ---------- */
+  .conclusion{
+    margin-top:34px;
+    background:var(--paper-2);
+    padding:52px 46px;
+    border:1px solid var(--line);
+  }
+  .conclusion p{font-size:1.11rem;max-width:80ch;}
+  .conclusion p + p{margin-top:18px;}
+  .pull{
+    font-family:"Fraunces",serif;font-style:italic;font-size:clamp(1.5rem,3vw,2.15rem);
+    line-height:1.24;letter-spacing:-.012em;margin:30px 0;
+    max-width:24ch;
+  }
+  .final-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:30px;}
+  .final-card{border-top:3px solid var(--accent);padding-top:16px;}
+  .final-card h4{font-family:"Fraunces",serif;font-size:1.12rem;margin-bottom:8px;}
+  .final-card p{font-size:.98rem;color:var(--ink-soft);}
+
+  footer{
+    border-top:1px solid var(--line);
+    margin-top:70px;padding:36px 0 60px;
+  }
+  footer p{
+    font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--muted);line-height:2;
+    max-width:96ch;
+  }
+
+  /* ---------- MOTION ---------- */
+  .reveal{opacity:0;transform:translateY(22px);animation:fadeUp .75s cubic-bezier(.16,.84,.44,1) forwards;}
+  .reveal:nth-child(2){animation-delay:.09s;}
+  .reveal:nth-child(3){animation-delay:.18s;}
+  .reveal:nth-child(4){animation-delay:.27s;}
+  @keyframes fadeUp{to{opacity:1;transform:translateY(0);}}
+  @media (prefers-reduced-motion:reduce){
+    .reveal{animation:none;opacity:1;transform:none;}
+    html{scroll-behavior:auto;}
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:900px){
+    .compare{grid-template-columns:1fr;}
+    .panel:first-child{border-right:0;border-bottom:1px solid var(--line);}
+    .reading{grid-template-columns:1fr;}
+    .doc-grid{grid-template-columns:1fr;}
+    .topic-head{grid-template-columns:1fr;gap:10px;}
+    .num{font-size:2.6rem;}
+    .diff-row{grid-template-columns:1fr;}
+    .diff-row .a{border-right:0;}
+    .diff-row .b{border-left:0;}
+    .final-grid{grid-template-columns:1fr;}
+    .conclusion{padding:34px 24px;}
+    .wrap{padding:0 20px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="kicker reveal"><span class="dot"></span><span>Análise comparativa</span><span>·</span><span>Ciclo eleitoral 2027–2030</span><span>·</span><span>Base documental fechada</span></div>
+    <h1 class="reveal">Dois planos, <em>duas visões</em> de Estado</h1>
+    <p class="deck reveal">Relatório de leitura cruzada entre o <strong>Programa de Governo</strong> (chapa Lula Presidente / Vice Alckmin) e o documento <strong>“Para o Brasil vencer o atraso — Diretrizes do Plano de Governo 2027‑2030”</strong> (Flávio Bolsonaro Presidente, PL). A comparação restringe‑se exclusivamente ao que consta nos dois documentos enviados, com transcrição literal dos pontos centrais.</p>
+    <div class="meta-row reveal">
+      <div class="meta-cell"><span>Documento 1</span><strong>Programa de Governo — Lula Presidente / Vice Alckmin (84 páginas)</strong></div>
+      <div class="meta-cell"><span>Documento 2</span><strong>Para o Brasil vencer o atraso — Flávio Bolsonaro Presidente, PL (76 páginas)</strong></div>
+      <div class="meta-cell"><span>Eixos analisados</span><strong>10 tópicos de comparação</strong></div>
+      <div class="meta-cell"><span>Metodologia</span><strong>Citação literal + leitura comparativa, sem extrapolação</strong></div>
+    </div>
+  </div>
+</header>
+
+<nav class="eixos" aria-label="Índice de eixos">
+  <ol>
+    <li><a href="#t1">01 · China × EUA</a></li>
+    <li><a href="#t2">02 · Petróleo</a></li>
+    <li><a href="#t3">03 · Terras raras</a></li>
+    <li><a href="#t4">04 · Déficit fiscal</a></li>
+    <li><a href="#t5">05 · Industrialização</a></li>
+    <li><a href="#t6">06 · Rodovias × Ferrovias</a></li>
+    <li><a href="#t7">07 · Nordeste</a></li>
+    <li><a href="#t8">08 · Similaridades</a></li>
+    <li><a href="#t9">09 · Diferenças</a></li>
+    <li><a href="#t10">10 · Conclusão</a></li>
+  </ol>
+</nav>
+
+<main>
+  <div class="wrap">
+
+    <section class="doc-note">
+      <div class="topic-head">
+        <span class="num">00</span>
+        <div>
+          <h2>Sobre os documentos analisados</h2>
+          <p class="lede">Os dois arquivos são materiais programáticos de campanha para o período 2027–2030. O primeiro é o <em>Programa de Governo</em> da coligação encabeçada por Lula (com registro de apoio de PT, PSB, PV, PCdoB, PDT, PSOL e Rede), que combina balanço do mandato em curso e diretrizes para um novo ciclo. O segundo é o <em>Plano de Governo</em> de Flávio Bolsonaro (PL), organizado em blocos temáticos (“Brasil sem Medo”, “Brasil por Elas”, “Brasil sem Fila”, “Brasil Mais Barato”, “Brasil que Prepara”, “Brasil que Prospera”, “Brasil que Cresce”, “Brasil que Cumpre a Constituição”, “Brasil que Não Volta Atrás”).</p>
+        </div>
+      </div>
+      <div class="doc-grid">
+        <article class="doc-card reveal">
+          <div class="tag">Documento 1 · Programa de Governo</div>
+          <h3>Projeto de desenvolvimento com o Estado como indutor</h3>
+          <p>Texto estruturado em 13 diretrizes programáticas (democracia, desigualdades, segurança, educação, saúde, cultura, cidade, economia, segurança alimentar, energia, meio ambiente, trabalho e soberania internacional), precedido de balanço fiscal, tributário e social do período 2023–2026.</p>
+        </article>
+        <article class="doc-card alt reveal">
+          <div class="tag">Documento 2 · Para o Brasil vencer o atraso</div>
+          <h3>Projeto liberal‑reformista com o Estado como facilitador</h3>
+          <p>Texto organizado em torno da “jornada do cidadão” — proteção, tempo, renda, ferramentas, conquista, patrimônio — com eixo transversal de segurança pública, digitalização, redução de impostos, ajuste fiscal e abertura comercial.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 01 -->
+    <section class="topic" id="t1">
+      <div class="topic-head">
+        <span class="num">01</span>
+        <div>
+          <h2>Relação China × EUA</h2>
+          <p class="lede">Os documentos tratam o tema sob a chave da “soberania” e da inserção internacional, mas com ênfases distintas: um prioriza multilateralismo e Sul Global; o outro, reaproximação com parceiros tradicionais e adesão a padrões ocidentais de governança.</p>
+        </div>
+      </div>
+      <div class="compare">
+        <article class="panel">
+          <div class="p-tag">Documento 1</div>
+          <h4>Autonomia estratégica, multilateralismo e crítica às imposições unilaterais</h4>
+          <ul>
+            <li>Registra impacto externo sobre a economia: “As restrições que as guerras na Ucrânia e no Iraque trouxeram ao comércio, aos fertilizantes, à energia e à estabilidade global afetaram diretamente países em desenvolvimento como o Brasil. Além disso, fomos afetados também por pelo menos três ondas de tarifas pelo Governo Trump”, o que exigiu medidas como o “Plano Brasil Soberano”.</li>
+            <li>Propõe “aprofundar a aproximação geopolítica com o BRICS e com o Sul Global” e a reaproximação “com a Ásia, o Oriente Médio e Europa”.</li>
+            <li>Defende “ordem mundial mais justa e equilibrada, livre da lógica da submissão, das imposições unilaterais e dos esquemas obsoletos de uma nova Guerra Fria”, com relações “fundamentadas na reciprocidade, na cooperação pacífica e no respeito entre as nações”.</li>
+            <li>Advoga reforma do Conselho de Segurança da ONU, da OMC e “democratização de FMI, do Banco Mundial e dos bancos multilaterais”, além do fortalecimento de CAF, NDB e dos mecanismos financeiros dos BRICS.</li>
+          </ul>
+          <blockquote>
+            “Será necessário redobrado protagonismo diplomático brasileiro... Defenderemos os interesses do Brasil e do povo brasileiro com firmeza, responsabilidade e altivez. Para nós, soberania não é palavra de ocasião: é princípio permanente e inegociável.”
+            <cite>Documento 1 — Soberania nacional e protagonismo internacional</cite>
+          </blockquote>
+          <p class="alert">Observação: o conteúdo do Documento 1 não cita nominalmente a China na relação China × EUA.</p>
+        </article>
+        <article class="panel">
+          <div class="p-tag">Documento 2</div>
+          <h4>Abertura comercial e realinhamento com parceiros tradicionais</h4>
+          <ul>
+            <li>É o documento que trata nominalmente do eixo: “Não trataremos como adversários os nossos parceiros mais importantes e tradicionais. Nos últimos anos, as relações com países como Argentina, Estados Unidos e Israel foram levadas ao limite do rompimento. Vamos reverter esse quadro”.</li>
+            <li>“Negociaremos com todos os que interessam ao Brasil, da China à União Europeia, dos Estados Unidos aos mercados asiáticos, porque o que orienta a nossa diplomacia é o interesse do produtor e do trabalhador brasileiro, não a simpatia ou a antipatia por este ou aquele governo.”</li>
+            <li>Propõe “retomar o cronograma interrompido de adesão à OCDE, incluindo o fim gradual do IOF sobre o câmbio”, além de reforma da OMC, democratização do FMI/Banco Mundial e fortalecimento de CAF e NDB.</li>
+            <li>Critica alinhamentos ideológicos: recepção ao “ditador venezuelano Nicolás Maduro” e “atracação de navios de guerra iranianos em portos brasileiros”, afirmando que a política externa deve ser “guiada pelo profissionalismo e pelo pragmatismo, não pela ideologia”.</li>
+          </ul>
+          <blockquote>
+            “Defender a soberania de verdade não é fazer discurso: é abrir mercados para quem produz aqui, atrair investimento e garantir que o Brasil seja respeitado por sua força econômica e por sua seriedade, não por bravata.”
+            <cite>Documento 2 — Brasil no mundo</cite>
+          </blockquote>
+        </article>
+      </div>
+      <aside class="reading">
+        <div class="r-label">Leitura comparativa</div>
+        <p>Ambos rejeitam subordinação externa e pregam autonomia de decisão. A diferença está na geografia das parcerias: o Documento 1 constrói a posição brasileira a partir de BRICS, Sul‑Sul e multilateralismo, reagindo a “ondas de tarifas” e a “imposições unilaterais”; o Documento 2 adota linguagem de negociação pragmática e paridade entre EUA, China, União Europeia e Ásia, com prioridade declarada para a retomada do diálogo com Estados Unidos, Argentina e Israel e para a adesão à OCDE.</p>
+      </aside>
+    </section>
+
+    <!-- 02 -->
+    <section class="topic" id="t2">
+      <div class="topic-head">
+        <span class="num">02</span>
+        <div>
+          <h2>Petróleo</h2>
+          <p class="lede">Os dois planos veem a cadeia de petróleo e gás como ativo estratégico, mas avançam por vias diferentes: expansão do investimento estatal (Petrobras, refino, distribuição, indústria naval) de um lado; destravamento regulatório, escoamento de gás e parcerias do outro.</p>
+        </div>
+      </div>
+      <div class="compare">
+        <article class="panel">
+          <div class="p-tag">Documento 1</div>
+          <h4>Petrobras como eixo de investimento, refino e integração industrial</h4>
+          <ul>
+            <li>“O governo Lula III retomou os investimentos em petróleo e gás. A Petrobras tem batido sucessivos recordes de produção de petróleo e voltou a investir em refino e derivados, em gás e fertilizantes, ampliando suas encomendas às indústrias naval e petroquímica.”</li>
+            <li>Registra “recorde de 4.897 milhões de barris de óleo equivalente por dia” no fim de 2025 e crescimento de 79% dos investimentos da Petrobras no triênio 2023–2025 frente a 2019–2021.</li>
+            <li>“Encomenda de 96 embarcações somente pela Petrobras, 71 delas a serem construídas no Brasil”, com a indústria naval registrando “70.725 empregos em 2026”.</li>
+            <li>Propõe que a Petrobras “continuará ampliando investimentos em exploração onshore e offshore, para recuperar participação no controle de reservas nacionais”, com “cuidados socioambientais ainda maiores”, retomada “ao segmento de distribuição de combustíveis”, expansão do refino e atuação da Transpetro em logística de GNL.</li>
+            <li>Preços: “A nova política de preços da Petrobras, combinada com a ação de subvenções governamentais, diminuiu a volatilidade dos preços do diesel, da gasolina e do GLP”. Há ainda o programa “Gás do Povo”, substituto do antigo Auxílio Gás.</li>
+          </ul>
+          <blockquote>
+            “A competência nuclear brasileira, como política de Estado, será preservada para uso exclusivamente pacífico... Avançaremos na autonomia do ciclo do combustível nuclear e aproveitaremos de forma responsável as reservas nacionais de urânio.”
+            <cite>Documento 1 — Segurança energética</cite>
+          </blockquote>
+        </article>
+        <article class="panel">
+          <div class="p-tag">Documento 2</div>
+          <h4>Escoamento, Nova Lei do Gás, refino modernizado e fracking regulado</h4>
+          <ul>
+            <li>“Vamos transformar em energia e emprego a nossa riqueza de petróleo e gás. Foi o governo Bolsonaro que sancionou a Nova Lei do Gás, em 2021, quebrando o monopólio, abrindo o setor à concorrência e criando as condições para o preço do gás cair.”</li>
+            <li>Diagnóstico de gargalo: “O Brasil produz cada vez mais gás no pré‑sal, mas desperdiça parte dele por falta de escoamento, enquanto importa gás caro do exterior. Vamos apoiar a expansão da rede de escoamento e transporte de gás conforme a demanda”.</li>
+            <li>“Estimular a modernização de refino rumo ao aproveitamento do petróleo nacional, incentivar o escoamento de combustível ao Centro‑Oeste por modais mais baratos que o caminhão, e favorecer a produção nacional de fertilizantes a partir do gás.”</li>
+            <li>“O Programa Nacional de Segurança Energética deverá ter foco em refino, processamento, escoamento e transporte de combustíveis e gás, permitir a exploração do gás não convencional (fracking) com responsabilidade ambiental e cumprindo a lei.”</li>
+            <li>Eletricidade e transição: racionalização de encargos, “redução gradual da CDE”, “programa de armazenamento de energia” e aposta em “polo global de data centers sustentáveis”, além de biocombustíveis (etanol, biodiesel, HVO, SAF, biogás) e venda de “créditos de carbono ao mundo”.</li>
+          </ul>
+          <blockquote>
+            “Energia barata é conta de luz menor no fim do mês e fábrica que gera emprego em vez de fechar as portas.”
+            <cite>Documento 2 — Energia</cite>
+          </blockquote>
+        </article>
+      </div>
+      <aside class="reading">
+        <div class="r-label">Leitura comparativa</div>
+        <p>Há convergência em três pontos: petróleo e gás como vetor de segurança energética, redução de dependência externa de fertilizantes e expansão da malha de escoamento. A divergência é de arquitetura institucional: o Documento 1 concentra a execução na Petrobras (investimento, refino, distribuição, encomendas navais) e defende política de preços com amortecimento de volatilidade; o Documento 2 enfatiza regulação, concorrência, concessões e “destravamento” do setor privado, incluindo a exploração de gás não convencional.</p>
+      </aside>
+    </section>
+
+    <!-- 03 -->
+    <section class="topic" id="t3">
+      <div class="topic-head">
+        <span class="num">03</span>
+        <div>
+          <h2>Terras raras</h2>
+          <p class="lede">Tema em que os documentos se aproximam mais: ambos rejeitam a exportação de matéria‑prima bruta e propõem agregação de valor local. Divergem quanto ao papel do Estado e aos instrumentos.</p>
+        </div>
+      </div>
+      <div class="compare">
+        <article class="panel">
+          <div class="p-tag">Documento 1</div>
+          <h4>Política setorial específica e soberania nas cadeias globais</h4>
+          <ul>
+            <li>“Desenvolveremos uma política específica para minerais críticos e terras raras, capaz de organizar suas cadeias produtivas, diferenciar seus usos tecnológicos e evitar a simples exportação de matérias‑primas estratégicas.”</li>
+            <li>“Promoveremos uma estratégia regional de mapeamento, beneficiamento e agregação de valor, para inserir o país de forma soberana nas cadeias globais de valor desses recursos.”</li>
+            <li>Indústria: “o foco estratégico está na inovação, IA, minerais críticos e outros ativos capazes de colocar o Brasil de uma vez por todas como protagonista em áreas portadoras de futuro”, com prioridade para “setores de alta e média intensidade tecnológica”.</li>
+            <li>Uso industrial doméstico citado: processamento de minerais críticos em plantas “eletrointensivas” no Nordeste, movidas a energia renovável (siderurgia verde, fertilizantes, química, cimento, alumínio, hidrogênio de baixo carbono).</li>
+          </ul>
+          <blockquote>
+            “Evitar a simples exportação de matérias‑primas estratégicas... inserir o país de forma soberana nas cadeias globais de valor desses recursos.”
+            <cite>Documento 1 — Indústria, inovação e cadeias produtivas</cite>
+          </blockquote>
+        </article>
+        <article class="panel">
+          <div class="p-tag">Documento 2</div>
+          <h4>“A riqueza do subsolo virando emprego qualificado aqui dentro”</h4>
+          <ul>
+            <li>“Temos lítio, nióbio, grafite, cobre, níquel, urânio e terras‑raras, insumos essenciais para semicondutores, baterias, turbinas eólicas, veículos elétricos, defesa e inteligência artificial.”</li>
+            <li>“E temos algo que quase ninguém tem junto: o mineral e a energia limpa e competitiva para transformá‑lo aqui dentro. Em vez de somente exportar a pedra bruta e comprar de volta o produto acabado, vamos agregar valor no Brasil, conectando nossa riqueza mineral, nossa energia e a demanda dos data centers e das novas tecnologias numa estratégia única.”</li>
+            <li>Papel do Estado definido explicitamente: “O Estado atuará como regulador e coordenador, não como empreendedor, apoiado em seis pilares: marco regulatório claro e estável, licenciamento ágil e técnico, atração de capital e tecnologia, verticalização com incentivos de mercado, governança e transparência”.</li>
+            <li>“Vamos equacionar as garantias de crédito ao financiamento dos projetos e acelerar o licenciamento e o processo de direitos minerários... o que significa emprego qualificado e renda que fica no Brasil.”</li>
+            <li>Instrumento financeiro destacado: participação brasileira nas “patentes de inteligência artificial” e uso de compras públicas e GovTech como indutores.</li>
+          </ul>
+          <blockquote>
+            “Não seremos apenas consumidores de tecnologia: seremos também seus desenvolvedores e produtores.”
+            <cite>Documento 2 — Tecnologia e Inovação</cite>
+          </blockquote>
+        </article>
+      </div>
+      <aside class="reading">
+        <div class="r-label">Leitura comparativa</div>
+        <p>Convergência clara na recusa do modelo de “pedra bruta” e na aposta em verticalização produtiva. O Documento 1 propõe política setorial planejada, mapeamento regional e inserção “soberana”; o Documento 2 propõe o mesmo resultado por meio de regulação ágil, atração de capital estrangeiro, data centers e crédito, com o Estado em posição de “regulador e coordenador”.</p>
+      </aside>
+    </section>
+
+    <!-- 04 -->
+    <section class="topic" id="t4">
+      <div class="topic-head">
+        <span class="num">04</span>
+        <div>
+          <h2>Déficit fiscal</h2>
+          <p class="lede">Eixo de maior atrito entre os textos. O Documento 1 defende a manutenção do novo arcabouço fiscal e a recomposição de pisos sociais; o Documento 2 propõe reformulação das regras fiscais, superávits primários e um corte estrutural de despesas — o que chama de “Tesoura”.</p>
+        </div>
+      </div>
+      <div class="compare">
+        <article class="panel">
+          <div class="p-tag">Documento 1</div>
+          <h4>Arcabouço fiscal, proteção social e justiça tributária</h4>
+          <ul>
+            <li>Situação declarada: déficit “de aproximadamente 2% do PIB, R$ 240 bilhões”, com projeção de que “o déficit primário encerrará 2026 próximo de 0,4% do PIB, bastante próximo do equilíbrio fiscal”.</li>
+            <li>“Adotamos uma estratégia fiscal inovadora com o novo arcabouço fiscal, que controla o crescimento das despesas sem prejudicar a recomposição de gastos sociais. Restabelecemos os pisos constitucionais da saúde e da educação, reorganizamos as contas públicas.”</li>
+            <li>“Manteremos o novo arcabouço fiscal, que controla o crescimento das despesas sem prejudicar as políticas sociais e permitiu uma redução significativa do déficit primário.”</li>
+            <li>“O resultado fiscal virá... da retomada do crescimento econômico, do controle do aumento do gasto primário, investindo na melhoria da eficiência e da qualidade do gasto público, da promoção de justiça tributária e do combate aos privilégios e às distorções.”</li>
+            <li>Diretriz tributária: “colocar o pobre no orçamento e o rico no Imposto de Renda”; tributação de “renda dos super ricos”, fechamento de “brechas” como offshore e fundos exclusivos, e reforma do consumo (cinco tributos para CBS/IBS) com cesta básica isenta e cashback.</li>
+          </ul>
+          <blockquote>
+            “A taxa de juros é hoje o que a inflação foi no passado no Brasil: promove concentração de renda e desorganiza a nossa economia.”
+            <cite>Documento 1 — Política macroeconômica</cite>
+          </blockquote>
+        </article>
+        <article class="panel">
+          <div class="p-tag">Documento 2</div>
+          <h4>“Contas em ordem”: superávit, teto de gastos refeito e corte de despesas</h4>
+          <ul>
+            <li>Diagnóstico: “Em quatro anos, a dívida pública cresceu 13 pontos percentuais em relação ao PIB”; “30 novos impostos ou aumentos de alíquota”; “maior taxa de juros básica em 19 anos”; endividamento recorde das famílias (85% das que ganham até três salários mínimos).</li>
+            <li>“Vamos fazer o oposto: faremos nossos gastos caberem no orçamento, o que permitirá cobrar menos impostos e não empurrar dívida para as próximas gerações. Apresentaremos uma reformulação das atuais regras fiscais, com regras claras focadas na estabilização e na redução da dívida pública conforme determina a Constituição.”</li>
+            <li>“Vamos construir o equilíbrio fiscal duradouro, entregando superávits primários e limitando o crédito subsidiado com recursos do Tesouro, mitigando pressões inflacionárias. E haverá uma regra clara de controle de gastos discricionários dos três Poderes da União.”</li>
+            <li>Metas declaradas: juros “em linha com a média internacional”, inflação “no centro da meta” e queda da relação dívida/PIB — relembrando que, no governo Bolsonaro, “reduzimos em 4 pontos percentuais a relação entre a dívida e o PIB”.</li>
+            <li>Instrumentos: “um grande TESOURA: um corte profundo e por todos os lados, que enxuga a máquina”, com “corte de no mínimo 10 ministérios, a redução de cargos comissionados e de despesas administrativas e o combate aos penduricalhos e supersalários”.</li>
+            <li>Crítica à reforma tributária em curso: “o Brasil caminha para um dos maiores impostos sobre valor agregado (IVA) do mundo, projetado em torno de 30%, contra uma média de 19% nos países da OCDE”, com custo “que se aproxima de R$ 1 trilhão” e “mais de R$ 500 bilhões em exceções decorrentes dos lobbies”.</li>
+          </ul>
+          <blockquote>
+            “A meta é alcançar, o quanto antes possível, a estabilidade e depois a queda da relação Dívida/PIB, o que puxa os juros para a média internacional e leva a inflação ao centro da meta.”
+            <cite>Documento 2 — Contas em ordem para juros e inflação menores</cite>
+          </blockquote>
+        </article>
+      </div>
+      <aside class="reading">
+        <div class="r-label">Leitura comparativa</div>
+        <p>Ambos prometem responsabilidade fiscal e controlar inflação e juros. O Documento 1 associa o ajuste à “justiça tributária” (tributar altas rendas, cortar isenções e benefícios ineficientes) e à manutenção dos pisos sociais; o Documento 2 associa o ajuste à redução de despesas, à diminuição de impostos sobre produção e consumo e à revisão da reforma tributária. Também divergem sobre a leitura do período recente: o Documento 1 registra aproximação do “equilíbrio fiscal” em 2026; o Documento 2 aponta alta de 13 pontos percentuais da dívida/PIB e “30 aumentos de tributos”.</p>
+      </aside>
+    </section>
+
+    <!-- 05 -->
+    <section class="topic" id="t5">
+      <div class="topic-head">
+        <span class="num">05</span>
+        <div>
+          <h2>Industrialização</h2>
+          <p class="lede">Os dois planos pregam reindustrialização, inovação, inteligência artificial e soberania tecnológica. A divergência central é o instrumento: política industrial com financiamento público e compras governamentais, de um lado; ambiente de negócios, PPPs, abertura e adesão à OCDE, do outro.</p>
+        </div>
+      </div>
+      <div class="compare">
+        <article class="panel">
+          <div class="p-tag">Documento 1</div>
+          <h4>Nova Indústria Brasil (NIB), Plano Mais Produção e soberania tecnológica</h4>
+          <ul>
+            <li>“Com a Nova Indústria Brasil – NIB, investimos massivamente em áreas estratégicas e na estrutura produtiva brasileira... retomada da produção industrial, recordes de safra, o crescimento das exportações e a retomada dos investimentos públicos e privados.”</li>
+            <li>“Somente em financiamentos por meio do Plano Mais Produção (P+P), a NIB terá disponibilizado R$ 860 bilhões entre 2023 e 2026.”</li>
+            <li>Cinco objetivos centrais: “elevar a produtividade, agregar valor às cadeias produtivas, fortalecer a soberania tecnológica, gerar empregos qualificados e descarbonizar a economia”, com prioridade para “setores de alta e média intensidade tecnológica” (Indústria 4.0, digitalização e renovação de maquinário).</li>
+            <li>Cadeias estratégicas citadas: complexo econômico‑industrial da saúde (insulina, hemoderivados, IFAS, vacinas), fertilizantes, indústria de defesa, naval, baterias, hidrogênio, bioprodutos, reatores nucleares modulares e data centers “com contrapartidas de conteúdo local”.</li>
+            <li>Instrumentos: financiamento direcionado, “compras públicas... com estímulo a conteúdo local, valor agregado nacional, margens de preferência”, uso estratégico do FNDCT, Taxonomia Sustentável Brasileira (TSB), Eco Invest Brasil e “repatriação e fixação de talentos científicos” (Programa Conhecimento Brasil, 599 pesquisadores aprovados).</li>
+          </ul>
+          <blockquote>
+            “Não há desenvolvimento sem soberania em áreas estratégicas, capacidade industrial, domínio tecnológico e projeto nacional.”
+            <cite>Documento 1 — Projeto nacional de desenvolvimento</cite>
+          </blockquote>
+        </article>
+        <article class="panel">
+          <div class="p-tag">Documento 2</div>
+          <h4>Competitividade, tecnologia própria e integração às cadeias globais</h4>
+          <ul>
+            <li>“Não seremos apenas consumidores de tecnologia: seremos também seus desenvolvedores e produtores.”</li>
+            <li>“Fortalecer os parques tecnológicos, expandir as incubadoras, apoiar as startups de base tecnológica e aproximar universidades e empresas, com a gestão das universidades integrada à ciência e à tecnologia.”</li>
+            <li>“Estratégia Nacional de Inteligência Artificial vai difundir a IA para as micro, pequenas e médias empresas em larga escala, com prioridade para indústria, agroindústria, saúde e logística.”</li>
+            <li>Infraestrutura e financiamento: “Modernizar os marcos regulatórios e adotar um novo modelo de financiamento para toda a infraestrutura, com fundo lastreado na securitização de ativos e imóveis da União, uso intensivo de PPPs e concessões e financiamentos do BNDES.”</li>
+            <li>“Executar um plano nacional de integração às cadeias globais de valor, com apoio real para que o setor produtivo ganhe produtividade, tendo como prioridade a agroindústria avançada, os minerais críticos, a saúde e a economia digital, e apoiar a internacionalização das pequenas e médias empresas via BNDES e Apex‑Brasil.”</li>
+            <li>Competitividade doméstica: foco em “infraestrutura, produtividade, segurança jurídica, estabilidade macroeconômica, acesso a crédito e juros civilizados”; além de “produção nacional de fertilizantes” (potássio e fosfato), energia limpa como atrativo para “data centers e inteligência artificial” e “fortalecer as multinacionais brasileiras”.</li>
+          </ul>
+          <blockquote>
+            “Um país competitivo por dentro é um país que gera emprego, renda e prosperidade que chega a todos.”
+            <cite>Documento 2 — Competitividade doméstica</cite>
+          </blockquote>
+        </article>
+      </div>
+      <aside class="reading">
+        <div class="r-label">Leitura comparativa</div>
+        <p>Os dois textos partilham o diagnóstico de que o país precisa sair da exportação de commodities brutas e ocupar cadeias de maior valor tecnológico (IA, minerais críticos, saúde, data centers, energia limpa). O Documento 1 faz isso por planejamento industrial, crédito público e demanda estatal; o Documento 2, por regulação, licenciamento, capital privado, PPPs e inserção em padrões internacionais (OCDE, cadeias globais de valor).</p>
+      </aside>
+    </section>
+
+    <!-- 06 -->
+    <section class="topic" id="t6">
+      <div class="topic-head">
+        <span class="num">06</span>
+        <div>
+          <h2>Rodovias × Ferrovias</h2>
+          <p class="lede">Nenhum dos documentos abandona o modal rodoviário; ambos propõem acelerar ferrovias, hidrovias e portos para reduzir o custo logístico. A disputa é de ênfase e de modelo de execução.</p>
+        </div>
+      </div>
+      <div class="compare">
+        <article class="panel">
+          <div class="p-tag">Documento 1</div>
+          <h4>Novo PAC: concessões rodoviárias e aceleração ferroviária “em duas frentes”</h4>
+          <ul>
+            <li>“O Novo PAC alcançou o objetivo de retomar os investimentos públicos e privados em infraestrutura no País. No ano de 2025, alcançamos o recorde de investimento em infraestrutura, R$ 280 bilhões e devemos fechar 2026 com nova marca ainda maior, R$ 300 bilhões.”</li>
+            <li>“Os dados de execução apontam a realização de R$ 1,3 trilhão, com empreendimentos que chegaram a 99% dos municípios. Batemos o recorde de concessões, quadruplicando o número de leilões de rodovias em relação ao governo anterior e alcançando 46% de todas as concessões rodoviárias já realizadas no país.”</li>
+            <li>“Manteremos o ritmo nas concessões rodoviárias e intensificaremos as de ferrovias em duas frentes: leilão de novos projetos e repactuação dos contratos existentes.”</li>
+            <li>Integração modal citada: logística “rodoviária, ferroviária, hidroviária, aérea e marítima”, aeroportos regionais e novas rotas, “novos arrendamentos nos portos organizados”, concessão da manutenção dos canais de acesso, e mobilidade urbana com “mais 233 km de metrôs, trens e VLTs e outros 296 km de corredores exclusivos de ônibus no padrão BRT”.</li>
+            <li>Critério de priorização: “investimentos com maior potencial de redução das desigualdades e descarbonização”, além da demanda por “indústria nacional de equipamentos de transporte”.</li>
+          </ul>
+          <blockquote>
+            “A nova edição do Novo PAC manterá a articulação dos investimentos públicos e privados em infraestrutura logística, dando sequência a obras públicas e concessões. Manteremos o ritmo nas concessões rodoviárias e intensificaremos as de ferrovias em duas frentes.”
+            <cite>Documento 1 — Investimentos em logística</cite>
+          </blockquote>
+        </article>
+        <article class="panel">
+          <div class="p-tag">Documento 2</div>
+          <h4>“Corredores Logísticos Inteligentes”, Ferrogrão e Trem do Nordeste</h4>
+          <ul>
+            <li>“Vamos investir R$ 900 bilhões em quatro anos em rodovias, hidrovias, portos, aeroportos e ferrovias. Criaremos os Corredores Logísticos Inteligentes de integração nacional, com foco em redução do custo de logística, hoje em 15,5% do PIB, muito acima dos 8,8% dos Estados Unidos, desenvolvendo os corredores de escoamento do Centro‑Oeste até os portos.”</li>
+            <li>Ferrovias nomeadas: “vamos destravar a Ferrogrão: adotar o trem de cargas que ligará Mato Grosso, o oeste do Paraná e Santa Catarina; implantar o Trem do Nordeste, uma malha de passageiros ligando capitais da região...; e concluir a Transnordestina e ampliar o seu escopo para que a Paraíba e o Rio Grande do Norte sejam contemplados.”</li>
+            <li>Hidrovias: “Trabalharemos para destravar, sempre com responsabilidade ambiental, os projetos de infraestrutura fluvial que escoam a produção do campo, como a Hidrovia do Tapajós, com planejamento e diálogo prévio com as comunidades locais.”</li>
+            <li>Execução predominantemente privada: “segurança jurídica, regras tarifárias estáveis e previsíveis... uso intensivo de PPPs e concessões e financiamentos do BNDES”; “licitação ambiental ágil, moderna e com segurança jurídica”; “estabilidade das regras em até 20 anos” para grandes projetos.</li>
+            <li>Mobilidade urbana: prioridade para “linhas de metrô, transporte sobre trilhos e ônibus movidos a elétricos e biocombustíveis”, com contratos que “conciliem moradia e infraestrutura no mesmo projeto”.</li>
+          </ul>
+          <blockquote>
+            “O Brasil perde uma fortuna no caminho entre quem produz e quem consome... Vamos modernizar os marcos regulatórios e adotar um novo modelo de financiamento para toda a infraestrutura.”
+            <cite>Documento 2 — Logística e transporte</cite>
+          </blockquote>
+        </article>
+      </div>
+      <aside class="reading">
+        <div class="r-label">Leitura comparativa</div>
+        <p>Convergência: logística multimodal, redução do custo de transporte e expansão ferroviária. O Documento 1 sustenta o ritmo com investimento público (Novo PAC) somado a concessões, já com saldo de “46% de todas as concessões rodoviárias” realizadas; o Documento 2 propõe volume maior em quatro anos (R$ 900 bilhões), com ênfase em PPPs, securitização de ativos da União, licenciamento ágil e projetos ferroviários específicos (Ferrogrão, Trem do Nordeste, Transnordestina).</p>
+      </aside>
+    </section>
+
+    <!-- 07 -->
+    <section class="topic" id="t7">
+      <div class="topic-head">
+        <span class="num">07</span>
+        <div>
+          <h2>Nordeste</h2>
+          <p class="lede">Região tratada por ambos como vetor de futuro. Os dois planos apontam água, energia renovável e infraestrutura como eixos; o Documento 1 enfatiza a industrialização verde a partir da matriz eólica e solar, e o Documento 2 enfatiza irrigação, ferrovia de passageiros e atração de data centers.</p>
+        </div>
+      </div>
+      <div class="compare">
+        <article class="panel">
+          <div class="p-tag">Documento 1</div>
+          <h4>Polo de energia renovável, segurança hídrica e inclusão</h4>
+          <ul>
+            <li>“Assim como o Nordeste, que apresenta novas perspectivas de desenvolvimento por concentrar hoje cerca de 70% da geração eólica e solar do país. Vamos transformar a região em um polo de atração de plantas industriais eletrointensivas que buscam energia renovável e previsível para produzir com baixa emissão — siderurgia verde, fertilizantes, química, cimento, alumínio, processamento de minerais críticos, hidrogênio de baixo carbono e seus derivados.”</li>
+            <li>“O Novo PAC retomou os investimentos de segurança hídrica, investindo R$ 15 bilhões em obras complementares da transposição do São Francisco e em 2.800 km de canais e adutoras, 2,2 milhões de m³ em novos reservatórios, recuperação de 162 barragens e construção de 172,4 mil cisternas.”</li>
+            <li>Programa Cisternas ampliado “em regiões com estresse hídrico”, com “universalização do acesso à água potável” e “saneamento rural ecológico”.</li>
+            <li>Energia popular: “Luz do Povo” revive a Tarifa Social, com gratuidade até 80 kWh/mês para famílias do Cadastro Único, alcançando “mais de 60 milhões de pessoas”, e “Luz para Todos” recolocado com foco em áreas rurais.</li>
+            <li>Agro e abastecimento: valor de repasse do PAA ampliado para a agricultura familiar, plano Safra com juros competitivos, apoio à agroindústria familiar e turismo regional como vetor de renda.</li>
+          </ul>
+          <blockquote>
+            “Transformar a região em um polo de atração de plantas industriais eletrointensivas que buscam energia renovável e previsível para produzir com baixa emissão.”
+            <cite>Documento 1 — Desenvolvimento regional</cite>
+          </blockquote>
+        </article>
+        <article class="panel">
+          <div class="p-tag">Documento 2</div>
+          <h4>“A prioridade é a água” — de volta à produção, à ferrovia e à energia limpa</h4>
+          <ul>
+            <li>“O Brasil só será plenamente desenvolvido quando reduzir a distância entre suas regiões, e isso exige um esforço especial onde a desigualdade é maior: o Norte e o Nordeste. Não por assistência, mas por desenvolvimento.”</li>
+            <li>“A prioridade é a água. Foi o governo Bolsonaro que fez as águas do São Francisco chegarem ao sertão, concluindo o Eixo Norte da Transposição, e vamos priorizar as obras hídricas que faltam para levar água às maiores regiões do Nordeste.” Obras citadas: Ramal do Apodi, Ramal do Salgado, Adutora do Seridó, Canal do Xingó, Ramal do Piancó, canais do Sertão Baiano, Piauiense e Alagoano, CAC e “duplicação do Eixão das Águas do Ceará”.</li>
+            <li>“Mas fazer a água chegar é só o começo: vamos transformá‑la em produção”, com o Baixo Acaraú, “o maior perímetro de irrigação da América Latina”, polos de irrigação no Matopiba e no semiárido, e “água de reuso”.</li>
+            <li>“Implantar o Trem do Nordeste, 1.400 km de trilhos interligando Salvador, Aracaju, Maceió, Recife, João Pessoa, Natal e Fortaleza, abrindo um roteiro entre praias, cidades históricas e polos culturais”, além de concluir a Transnordestina.</li>
+            <li>“O Nordeste não é só o passado que resiste, é o futuro que chega. Tem sol e vento de sobra para ser a capital de energia limpa do país, e é essa energia farta e competitiva que vai atrair os data centers e a nova indústria de tecnologia. Tem as terras raras, matéria‑prima sem a qual não existe a economia do século 21.”</li>
+            <li>Prevenção: “barragens de usos múltiplos, reservatórios de controle de cheias, diques, canais e obras de drenagem e macrodrenagem”, fortalecimento do monitoramento e da Defesa Civil.</li>
+          </ul>
+          <blockquote>
+            “Fazer a água chegar é só o começo: vamos transformá‑la em produção.”
+            <cite>Documento 2 — Desenvolvimento regional</cite>
+          </blockquote>
+        </article>
+      </div>
+      <aside class="reading">
+        <div class="r-label">Leitura comparativa</div>
+        <p>Os dois documentos citam a Transposição do São Francisco como marco de segurança hídrica e veem no sol e no vento do Nordeste uma vantagem competitiva para indústria e tecnologia. O Documento 1 agrega política energética social (tarifa social, luz rural) e industrialização verde; o Documento 2 agrega irrigação em escala, ferrovia de passageiros (Trem do Nordeste) e atração de data centers e da cadeia de terras raras.</p>
+      </aside>
+    </section>
+
+    <!-- 08 -->
+    <section class="topic" id="t8">
+      <div class="topic-head">
+        <span class="num">08</span>
+        <div>
+          <h2>Similaridades</h2>
+          <p class="lede">Pontos de convergência verificáveis entre os dois textos, com registro da formulação em cada documento.</p>
+        </div>
+      </div>
+      <div class="idx-list">
+        <div class="idx-item"><div class="idx-n">S1</div><div><h5>Soberania como eixo declarado</h5><p>Doc. 1: soberania em dimensões “democrática, institucional, defesa nacional, geopolítica, científica, tecnológica, digital, energética, mineral, ambiental, cultural, econômica, financeira, trabalho decente, alimentar, educação e saúde”. Doc. 2: “Soberania com profissionalismo, não com ideologia” e “soberania se exerce na prática, não no discurso”.</p></div></div>
+        <div class="idx-item"><div class="idx-n">S2</div><div><h5>Mega investimentos em infraestrutura logística</h5><p>Doc. 1: Novo PAC com R$ 1,3 trilhão executados e R$ 280–300 bilhões/ano em infraestrutura. Doc. 2: R$ 900 bilhões em quatro anos em rodovias, hidrovias, portos, aeroportos e ferrovias.</p></div></div>
+        <div class="idx-item"><div class="idx-n">S3</div><div><h5>Expansão ferroviária e redução do custo logístico</h5><p>Doc. 1: “intensificaremos” leilões e repactuação de ferrovias. Doc. 2: “Corredores Logísticos Inteligentes” e destravamento de Ferrogrão, Trem do Nordeste e Transnordestina.</p></div></div>
+        <div class="idx-item"><div class="idx-n">S4</div><div><h5>Minerais críticos e terras raras com agregação de valor</h5><p>Ambos rejeitam a exportação de matéria‑prima bruta e propõem beneficiamento local (Doc. 1: política específica para minerais críticos e terras raras; Doc. 2: “a riqueza do subsolo virando emprego qualificado aqui dentro”).</p></div></div>
+        <div class="idx-item"><div class="idx-n">S5</div><div><h5>Energia limpa, biocombustíveis e transição energética</h5><p>Doc. 1: transição justa, biocombustíveis (etanol, biodiesel, SAF), hidrogênio de baixo carbono, 89% de renováveis na matriz elétrica. Doc. 2: “potência de biocombustíveis” (etanol, biodiesel, HVO, SAF, biogás), venda de créditos de carbono, armazenamento de energia.</p></div></div>
+        <div class="idx-item"><div class="idx-n">S6</div><div><h5>Data centers e inteligência artificial</h5><p>Doc. 1: expansão de data centers “com salvaguardas socioambientais obrigatórias”, modelos de linguagem em português, IA no setor produtivo. Doc. 2: IA para micro e pequenas empresas, data centers sustentáveis atraídos por energia limpa e barata.</p></div></div>
+        <div class="idx-item"><div class="idx-n">S7</div><div><h5>Produção nacional de fertilizantes e segurança alimentar</h5><p>Doc. 1: retomada da produção da Petrobras em Sergipe, Bahia, Paraná e Mato Grosso do Sul. Doc. 2: “apoio à produção nacional de fertilizantes”, com uso de potássio e fosfato nacionais.</p></div></div>
+        <div class="idx-item"><div class="idx-n">S8</div><div><h5>Segurança hídrica no Nordeste</h5><p>Ambos tomam a Transposição do São Francisco como referência e propõem novas obras hídricas, cisternas/reservatórios e defesa civil contra secas e enchentes.</p></div></div>
+        <div class="idx-item"><div class="idx-n">S9</div><div><h5>Estado digital, IA e serviços públicos on‑line</h5><p>Doc. 1: Gov.br com “mais de 5 mil serviços”, Base de Dados do Brasil, prontuário único, teleconsultas. Doc. 2: “digitalizar 100% dos serviços públicos”, identidade digital única, ClarIA, prontuário eletrônico único.</p></div></div>
+        <div class="idx-item"><div class="idx-n">S10</div><div><h5>Defesa do agronegócio, agricultura familiar e crédito rural</h5><p>Doc. 1: recorde de safras, Plano Safra, PAA, Pronaf, ATER, seguro rural. Doc. 2: ampliação do Seguro Rural, armazenamento de safras, regularização fundiária e crédito ao pequeno produtor.</p></div></div>
+        <div class="idx-item"><div class="idx-n">S11</div><div><h5>Proteção ambiental e combate ao crime ambiental</h5><p>Doc. 1: redução recorde do desmatamento, Plano Nacional de Manejo Integrado do Fogo, Código Florestal efetivo, desmatamento líquido zero até 2030. Doc. 2: “zerar o desmatamento ilegal até 2029”, inteligência e satélite, punição ao crime organizado ambiental.</p></div></div>
+        <div class="idx-item"><div class="idx-n">S12</div><div><h5>Indústria de defesa e segurança nas fronteiras</h5><p>Doc. 1: Base Industrial e Tecnológica de Defesa, fragatas, blindados, caças Gripen, FICCOs na Amazônia Legal. Doc. 2: Sistema Nacional de Fronteira, investimento em defesa condicionado à inserção internacional, drones e IA.</p></div></div>
+      </div>
+    </section>
+
+    <!-- 09 -->
+    <section class="topic" id="t9">
+      <div class="topic-head">
+        <span class="num">09</span>
+        <div>
+          <h2>Diferenças</h2>
+          <p class="lede">Quadro de contraste direto entre as formulações dos dois documentos, eixo a eixo.</p>
+        </div>
+      </div>
+      <div class="diff-table">
+        <div class="diff-row">
+          <div class="diff-head axis">Eixo</div>
+          <div class="diff-head a">Documento 1 — Programa de Governo</div>
+          <div class="diff-head b">Documento 2 — Para o Brasil vencer o atraso</div>
+        </div>
+        <div class="diff-row">
+          <div class="axis">Papel do Estado</div>
+          <div class="a">Estado indutor do desenvolvimento: planejamento democrático, política industrial (NIB), bancos públicos, compras públicas, “colocar o pobre no orçamento”.</div>
+          <div class="b">Estado facilitador e regulador: “O Estado atuará como regulador e coordenador, não como empreendedor”; iniciativa privada, PPPs, concessões, securitização de ativos.</div>
+        </div>
+        <div class="diff-row">
+          <div class="axis">Regra fiscal</div>
+          <div class="a">Manutenção do “novo arcabouço fiscal”, com proteção de pisos sociais e ajuste via crescimento, eficiência do gasto e justiça tributária.</div>
+          <div class="b">“Reformulação das atuais regras fiscais”, superávits primários duradouros, regra clara de controle de gastos dos três Poderes e “Tesoura” com corte de no mínimo 10 ministérios.</div>
+        </div>
+        <div class="diff-row">
+          <div class="axis">Tributação</div>
+          <div class="a">Reforma do consumo (CBS/IBS) mantida, cesta básica isenta, cashback aos mais pobres, tributação de offshore e fundos exclusivos, foco em “quem ganha mais deve contribuir mais”.</div>
+          <div class="b">Revisão e redimensionamento da reforma tributária, com redução do IVA (hoje projetado em torno de 30%) e da carga sobre produção e consumo; crítica a “30 aumentos de tributos”.</div>
+        </div>
+        <div class="diff-row">
+          <div class="axis">Juros e inflação</div>
+          <div class="a">Juros altos como fator de concentração de renda; busca de “redução sustentada das taxas de juros” com inflação controlada e política fiscal responsável.</div>
+          <div class="b">Atribui os juros ao desequilíbrio fiscal; promete “juros básicos em linha com a média internacional” e inflação “no centro da meta”.</div>
+        </div>
+        <div class="diff-row">
+          <div class="axis">Petróleo e gás</div>
+          <div class="a">Petrobras como motor (investimento, refino, distribuição, naval), política de preços com amortecimento de volatilidade, “Gás do Povo”.</div>
+          <div class="b">Nova Lei do Gás, concorrência, escoamento privado, modernização de refino, exploração de gás não convencional (fracking) com regulação.</div>
+        </div>
+        <div class="diff-row">
+          <div class="axis">Inserção internacional</div>
+          <div class="a">BRICS, Sul Global, Sul‑Sul, Mercosul, OTCA, reforma de ONU/OMC/FMI; crítica a “imposições unilaterais” e a tarifas externas.</div>
+          <div class="b">Retomada de diálogo com EUA, Argentina e Israel; adesão à OCDE (com fim gradual do IOF); abertura comercial e integração às cadeias globais de valor.</div>
+        </div>
+        <div class="diff-row">
+          <div class="axis">Trabalho e sindicatos</div>
+          <div class="a">“Fim da escala 6x1” e jornada de 40 horas sem redução salarial; valorização do salário‑mínimo; fortalecimento da negociação coletiva e atuação sindical.</div>
+          <div class="b">“O trabalhador em primeiro lugar, não o sindicato”; oposição à “República Sindical”; defesa do “negociado sobre o legislado” e redução gradual do custo do trabalho.</div>
+        </div>
+        <div class="diff-row">
+          <div class="axis">Segurança pública</div>
+          <div class="a">Sistema Único de Segurança Pública (SUSP), FICCOs, inteligência, prevenção, direitos humanos, proteção de juventude negra e povos tradicionais.</div>
+          <div class="b">Facções declaradas “organizações terroristas”, redução da maioridade penal para 16 anos, castração química, “Muralha Brasileira” de reconhecimento facial, 5 presídios de segurança máxima e meio milhão de vagas prisionais.</div>
+        </div>
+        <div class="diff-row">
+          <div class="axis">Justiça e regulação</div>
+          <div class="a">“Diálogo permanente” com o Judiciário, respeito à autonomia dos Poderes, regulação democrática de redes e plataformas contra desinformação.</div>
+          <div class="b">Reforma do Judiciário com o STF como “Corte Constitucional”, limitação de decisões monocráticas, quarentena de 1 ano para indicações e “Tesoura na Censura”.</div>
+        </div>
+        <div class="diff-row">
+          <div class="axis">Educação e habitação</div>
+          <div class="a">Expansão da rede pública (IFs, universidades, creches, tempo integral), cotas aperfeiçoadas, Pé‑de‑Meia; Minha Casa Minha Vida ampliado.</div>
+          <div class="b">Método fônico, Escolas Cívico‑Militares, voucher educativo e voucher‑creche, Escola Brasil por Elas; retomada da Casa Verde e Amarela (2,5 milhões de residências).</div>
+        </div>
+        <div class="diff-row">
+          <div class="axis">Empresas estatais e BNDES</div>
+          <div class="a">Estatais e bancos públicos como instrumentos de desenvolvimento; reindustrialização e FNDCT “sem contingenciamento”.</div>
+          <div class="b">Blindagem das estatais pela Lei das Estatais, recrutamento profissional, retomada do Programa Nacional de Desestatização; BNDES e Apex‑Brasil voltados à internacionalização de PMEs.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10 -->
+    <section class="topic" id="t10">
+      <div class="topic-head">
+        <span class="num">10</span>
+        <div>
+          <h2>Conclusão</h2>
+          <p class="lede">Síntese final, restrita ao que consta nos dois documentos analisados.</p>
+        </div>
+      </div>
+      <div class="conclusion">
+        <p class="pull">“Dois planos com metas produtivas parecidas e arquiteturas institucionais opostas.”</p>
+        <p>Os dois documentos partem de diagnósticos convergentes sobre o futuro: o país precisa de infraestrutura logística moderna, de energia limpa e barata, de transformar minerais críticos e terras raras em produto industrializado, de reduzir o custo logístico, de levar água ao sertão, de dominar inteligência artificial e data centers e de proteger seus biomas. Nesses pontos, as propostas se aproximam tanto que podem ser lidas como disputa de método — e não de destino.</p>
+        <p>A divergência central está na concepção de Estado e na política macroeconômica. O <strong>Documento 1</strong> descreve um projeto de desenvolvimento com o Estado como planejador e indutor (Nova Indústria Brasil, Plano Mais Produção com R$ 860 bilhões, Novo PAC, Petrobras como eixo, compras públicas com conteúdo local), combinado a proteção social ampliada e a uma política externa ancorada em BRICS, Sul Global e multilateralismo. O <strong>Documento 2</strong> descreve um projeto liberal‑reformista, com o Estado em papel de regulador e coordenador, forte ênfase em “Tesoura” fiscal, superávits primários, revisão da reforma tributária e redução de impostos, segurança pública de linha dura, reforma do Judiciário e realinhamento diplomático com Estados Unidos, Argentina e Israel, somado à adesão à OCDE.</p>
+        <div class="final-grid">
+          <article class="final-card reveal">
+            <h4>O que os documentos efetivamente convergem</h4>
+            <p>Soberania como princípio; investimento logístico multimodal; expansão ferroviária; valorização de minerais críticos e terras raras; energia renovável e biocombustíveis; data centers e IA; produção nacional de fertilizantes; segurança hídrica no Nordeste; Estado digital; valorização do agronegócio e da agricultura familiar; combate ao desmatamento e ao crime ambiental; indústria de defesa.</p>
+          </article>
+          <article class="final-card reveal">
+            <h4>O que os documentos efetivamente divergem</h4>
+            <p>Estado indutor versus Estado regulador; arcabouço fiscal com proteção social versus regra fiscal com superávit e corte de despesas; CBS/IBS mantida versus revisão do IVA; Petrobras investidora versus concorrência e escoamento privado; BRICS/Sul Global versus OCDE e reaproximação com EUA, Argentina e Israel; valorização sindical versus “negociado sobre o legislado”; SUSP/FICCOs versus “organizações terroristas”, castração química e reconhecimento facial; diálogo com o Judiciário versus limitação de competências do STF.</p>
+          </article>
+        </div>
+        <p style="margin-top:26px;">Duas lacunas devem ser registradas. Primeira: o <strong>Documento 1 não trata nominalmente da China</strong> no eixo China × EUA — sua formulação aparece de forma indireta, por meio da crítica a tarifas e a “imposições unilaterais” e pela defesa de BRICS e do Sul Global; a menção explícita à China, à União Europeia e aos Estados Unidos ocorre apenas no Documento 2. Segunda: alguns temas caros ao debate público (por exemplo, marcos regulatórios detalhados de plataformas digitais no Documento 2 e desdobramentos setoriais específicos de comércio exterior no Documento 1) não possuem desenvolvimento simétrico nos dois textos, o que limita comparações ponto a ponto nesses subtemas.</p>
+        <p>Em síntese, a escolha apresentada pelos documentos não é entre crescimento e estagnação — ambos prometem crescimento —, mas entre duas receitas para obtê‑lo: <strong>planejamento público, investimento estatal e redistribuição via tributação das altas rendas</strong>, no Documento 1; ou <strong>equilíbrio fiscal estrito, corte de impostos, desregulação, parcerias com o setor privado e segurança pública como pré‑condição de liberdade</strong>, no Documento 2.</p>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Relatório elaborado exclusivamente a partir dos dois documentos enviados · Documento 1: Programa de Governo (Lula Presidente / Vice Alckmin) · Documento 2: Para o Brasil vencer o atraso — Diretrizes do Plano de Governo 2027‑2030 (Flávio Bolsonaro Presidente, PL) · Todas as citações foram transcritas dos respectivos textos · Nenhuma informação externa foi acrescentada · Trechos ausentes nos documentos são sinalizados como “o conteúdo não menciona informação relevante”</p>
+  </div>
+</footer>
+
+</body>
+</html>

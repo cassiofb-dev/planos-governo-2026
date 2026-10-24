@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório Comparativo: Planos de Governo 2027–2030 (Lula vs. Flávio Bolsonaro)</title>
+    <style>
+        :root {
+            --bg-body: #f4f6f9;
+            --bg-card: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #475569;
+            --lula-color: #c81e1e;
+            --lula-bg: #fef2f2;
+            --flavio-color: #1e40af;
+            --flavio-bg: #eff6ff;
+            --accent-color: #0f766e;
+            --border-color: #e2e8f0;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.65;
+            padding: 2rem 1rem;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #ffffff;
+            padding: 2.5rem 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        header p {
+            color: #cbd5e1;
+            font-size: 1.05rem;
+        }
+        .badges {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1.25rem;
+            flex-wrap: wrap;
+        }
+        .badge {
+            padding: 0.5rem 1.25rem;
+            border-radius: 999px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .badge-lula {
+            background-color: var(--lula-color);
+            color: #fff;
+        }
+        .badge-flavio {
+            background-color: var(--flavio-color);
+            color: #fff;
+        }
+        .topic-section {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 1.75rem;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+        }
+        .topic-section h2 {
+            font-size: 1.45rem;
+            color: #0f172a;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        @media (max-width: 768px) {
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .candidate-box {
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 5px solid;
+        }
+        .box-lula {
+            background-color: var(--lula-bg);
+            border-left-color: var(--lula-color);
+        }
+        .box-flavio {
+            background-color: var(--flavio-bg);
+            border-left-color: var(--flavio-color);
+        }
+        .candidate-box h3 {
+            font-size: 1.15rem;
+            margin-bottom: 1rem;
+        }
+        .box-lula h3 {
+            color: var(--lula-color);
+        }
+        .box-flavio h3 {
+            color: var(--flavio-color);
+        }
+        ul {
+            padding-left: 1.25rem;
+        }
+        li {
+            margin-bottom: 0.65rem;
+            color: var(--text-main);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            font-size: 0.95rem;
+        }
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 0.85rem 1rem;
+            text-align: left;
+            vertical-align: top;
+        }
+        th {
+            background-color: #f8fafc;
+            font-weight: 700;
+            color: #0f172a;
+        }
+        .summary-box {
+            background-color: #f0fdf4;
+            border-left: 5px solid var(--accent-color);
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+        p.conclusion-text {
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+        footer {
+            text-align: center;
+            margin-top: 2.5rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Relatório Comparativo de Planos de Governo (2027–2030)</h1>
+        <p>Análise técnica das diretrizes programáticas de Luiz Inácio Lula da Silva[cite: 1, 2] e Flávio Bolsonaro[cite: 85]</p>
+        <div class="badges">
+            <span class="badge badge-lula">Lula Presidente (Vice: Geraldo Alckmin) — PT e Coligação[cite: 1, 84]</span>
+            <span class="badge badge-flavio">Flávio Bolsonaro Presidente — PL[cite: 85]</span>
+        </div>
+    </header>
+
+    <!-- 1. Relação China x EUA -->
+    <section class="topic-section">
+        <h2>1. Relação China x EUA e Inserção Geopolítica</h2>
+        <div class="comparison-grid">
+            <div class="candidate-box box-lula">
+                <h3>Luiz Inácio Lula da Silva (PT)</h3>
+                <ul>
+                    <li><strong>Crítica ao protecionismo dos EUA:</strong> Aponta que o Brasil sofreu pelo menos três ondas de "tarifaços" impostas pelo Governo Trump, exigindo a criação do <em>Plano Brasil Soberano</em> para proteger empresas e empregos domésticos[cite: 12].</li>
+                    <li><strong>Autonomia e rejeição a uma "Nova Guerra Fria":</strong> Propõe uma política externa universalista e independente, livre de subordinação estratégica, alinhamentos automáticos e esquemas de uma nova Guerra Fria[cite: 77, 80, 83].</li>
+                    <li><strong>Foco no BRICS, Ásia e Sul Global:</strong> Defende aprofundar a articulação geopolítica e financeira com o BRICS (fortalecendo o Novo Banco de Desenvolvimento - NDB), o Sul Global e o G20, além de persistir na reaproximação com a Ásia, Oriente Médio, África e Europa e consolidar o Mercosul[cite: 79, 80, 81].</li>
+                </ul>
+            </div>
+            <div class="candidate-box box-flavio">
+                <h3>Flávio Bolsonaro (PL)</h3>
+                <ul>
+                    <li><strong>Reaproximação com os EUA e aliados tradicionais:</strong> Critica o alinhamento ideológico do atual governo com regimes como Venezuela e Irã e propõe reverter o distanciamento diplomático com parceiros tradicionais como Estados Unidos, Argentina e Israel[cite: 145, 146].</li>
+                    <li><strong>Pragmatismo comercial com a China:</strong> Afirma que negociará com todos os blocos e países que interessam ao Brasil — "da China à União Europeia, dos Estados Unidos aos mercados asiáticos" — guiado pelo interesse do produtor e do trabalhador brasileiro[cite: 146].</li>
+                    <li><strong>Defesa do agro e adesão à OCDE:</strong> Propõe atuação diplomática eficaz contra sanções dos EUA, da China e da Europa ao agronegócio nacional e define como prioridade urgente retomar o cronograma de adesão à OCDE (incluindo o fim gradual do IOF sobre o câmbio), mantendo cautela contra dependência excessiva em cadeias críticas e tecnologia[cite: 138, 146, 147].</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Petróleo -->
+    <section class="topic-section">
+        <h2>2. Petróleo, Gás Natural e Combustíveis</h2>
+        <div class="comparison-grid">
+            <div class="candidate-box box-lula">
+                <h3>Luiz Inácio Lula da Silva (PT)</h3>
+                <ul>
+                    <li><strong>Expansão estatal e recordes da Petrobras:</strong> Destaca a alta de 79% nos investimentos da Petrobras (2023–2025 vs. 2019–2021) e o recorde de 4,897 milhões de barris de óleo equivalente/dia no fim de 2025[cite: 66].</li>
+                    <li><strong>Retorno à distribuição e ampliação do refino:</strong> Propõe que a Petrobras continue ampliando a exploração <em>onshore</em> e <em>offshore</em>, revitalize campos maduros, expanda o refino, amplie a logística de GNL via Transpetro e <strong>retorne ao segmento de distribuição de combustíveis</strong>[cite: 67].</li>
+                    <li><strong>Preços domésticos e Gás do Povo:</strong> Mantém a política de preços da Petrobras combinada a subvenções para evitar repassar a volatilidade internacional ao consumidor brasileiro (como na Guerra do Estreito de Ormuz) e destaca o programa <em>Gás do Povo</em> (recarga gratuita de GLP 13 kg para 15 milhões de famílias)[cite: 66].</li>
+                    <li><strong>Conteúdo local e transição energética:</strong> Mantém exigências de conteúdo local (como as 96 embarcações encomendadas pela estatal, 71 no Brasil), propõe readequar o REPETRO para descarbonização e participa do debate global sobre o mapa do caminho para longe dos combustíveis fósseis[cite: 66, 67, 71].</li>
+                </ul>
+            </div>
+            <div class="candidate-box box-flavio">
+                <h3>Flávio Bolsonaro (PL)</h3>
+                <ul>
+                    <li><strong>Abertura à concorrência e Nova Lei do Gás:</strong> Defende dar continuidade à Nova Lei do Gás (sancionada em 2021), quebrando monopólios e atraindo investimento privado para expandir a malha de escoamento e transporte do gás do pré-sal, barateando a energia e produzindo fertilizantes[cite: 136, 137].</li>
+                    <li><strong>Liberação do <em>fracking</em>:</strong> Propõe permitir a exploração de gás não convencional (<em>fracking</em>) com responsabilidade ambiental e cumprimento da lei no âmbito do <em>Programa Nacional de Segurança Energética</em>[cite: 136].</li>
+                    <li><strong>Modernização do refino e corte de impostos:</strong> Propõe estimular a modernização do refino para aproveitar o petróleo nacional, escoar combustíveis ao Centro-Oeste por modais mais baratos que o caminhão e reduzir impostos sobre combustíveis e eletricidade[cite: 115, 137].</li>
+                    <li><strong>Governança de mercado nas estatais:</strong> Defende o fortalecimento da Lei das Estatais contra indicações políticas, seleção de executivos com regras de mercado e retomada do Programa Nacional de Desestatização caso a caso[cite: 147, 154].</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Terras raras -->
+    <section class="topic-section">
+        <h2>3. Terras Raras e Minerais Críticos</h2>
+        <div class="comparison-grid">
+            <div class="candidate-box box-lula">
+                <h3>Luiz Inácio Lula da Silva (PT)</h3>
+                <ul>
+                    <li><strong>Política soberana contra exportação primária:</strong> Propõe criar uma política específica para minerais críticos e terras raras que organize suas cadeias produtivas, diferencie usos tecnológicos e <strong>evite a simples exportação de matérias-primas estratégicas brutas</strong>[cite: 52].</li>
+                    <li><strong>Beneficiamento e Neoindustrialização:</strong> Prevê estratégia regional de mapeamento, beneficiamento e agregação de valor no país, articulada à <em>Nova Indústria Brasil (NIB)</em> e ao processamento industrial eletrointensivo no Nordeste[cite: 50, 52, 56].</li>
+                </ul>
+            </div>
+            <div class="candidate-box box-flavio">
+                <h3>Flávio Bolsonaro (PL)</h3>
+                <ul>
+                    <li><strong>Agregação de valor com Estado regulador:</strong> Propõe transformar lítio, nióbio, grafite, cobre, níquel, urânio e terras-raras dentro do Brasil para abastecer semicondutores, baterias, defesa e <em>data centers</em>, definindo que <strong>o Estado atuará como regulador e coordenador, não como empresário</strong>[cite: 139].</li>
+                    <li><strong>Seis pilares e atração de capital externo:</strong> Baseia a estratégia em marco regulatório estável, licenciamento ágil, atração de capital e tecnologia estrangeira (com transferência de conhecimento e parcerias sem preconceitos ideológicos), verticalização por incentivos de mercado, governança e transparência, destacando as reservas de terras raras do Nordeste[cite: 139, 140, 145].</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Déficit fiscal -->
+    <section class="topic-section">
+        <h2>4. Déficit Fiscal, Dívida Pública e Tributação</h2>
+        <div class="comparison-grid">
+            <div class="candidate-box box-lula">
+                <h3>Luiz Inácio Lula da Silva (PT)</h3>
+                <ul>
+                    <li><strong>Manutenção do Novo Arcabouço Fiscal:</strong> Destaca um esforço fiscal de 2% do PIB (R$ 240 bilhões) entre 2023 e 2026, projetando déficit primário próximo de 0,4% do PIB no fim de 2026, e propõe manter o arcabouço fiscal para reduzir juros preservando investimentos sociais e pisos da saúde e educação[cite: 10, 11, 49].</li>
+                    <li><strong>Progressividade e Reforma Tributária:</strong> Enfatiza a tributação de super-ricos (<em>offshores</em> e fundos exclusivos) para isentar de IR quem ganha até R$ 5.000, o corte de isenções ineficientes e a implementação da Reforma Tributária do consumo (CBS e IBS, cesta básica isenta e <em>cashback</em>), além de propor debate sobre o peso de R$ 50 bilhões das emendas parlamentares[cite: 10, 11, 15, 19].</li>
+                </ul>
+            </div>
+            <div class="candidate-box box-flavio">
+                <h3>Flávio Bolsonaro (PL)</h3>
+                <ul>
+                    <li><strong>Nova regra fiscal e superávits primários:</strong> Critica o aumento de 13 pontos do PIB na dívida bruta durante a gestão Lula e propõe substituir o arcabouço fiscal por regras claras focadas em <strong>superávits primários</strong>, queda da Dívida/PIB, limitação de crédito subsidiado pelo Tesouro e limite de gastos discricionários para os três Poderes[cite: 92, 154, 155].</li>
+                    <li><strong>"Tesouraço" e revisão da Reforma Tributária:</strong> Propõe cortar no mínimo 10 ministérios, aprovar a Reforma Administrativa, extinguir supersalários e revisar a Reforma Tributária para baixar o IVA (projetado em cerca de 30%), eliminando os R$ 500 bilhões em exceções de <em>lobbies</em> e revertendo aumentos de impostos[cite: 114, 152, 153, 155, 156].</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Industrialização -->
+    <section class="topic-section">
+        <h2>5. Industrialização</h2>
+        <div class="comparison-grid">
+            <div class="candidate-box box-lula">
+                <h3>Luiz Inácio Lula da Silva (PT)</h3>
+                <ul>
+                    <li><strong>Nova Indústria Brasil (NIB):</strong> Política industrial ativa que disponibilizou R$ 860 bilhões no Plano Mais Produção (2023–2026), articulando crédito público, FNDCT descontingenciado, compras governamentais, margens de preferência e exigência de conteúdo local[cite: 17, 50, 51].</li>
+                    <li><strong>Indústria verde, Indústria 4.0 e setores estratégicos:</strong> Integra a indústria ao Plano de Transformação Ecológica (PTE), impulsionando o Complexo Econômico-Industrial da Saúde (insulina e Hemobrás), a Base Industrial de Defesa (Gripen F-39, KC-390 e fragatas), a indústria naval, a descarbonização e a digitalização de MPMEs via <em>Brasil Mais Produtivo</em>[cite: 39, 51, 52, 58, 66, 78].</li>
+                </ul>
+            </div>
+            <div class="candidate-box box-flavio">
+                <h3>Flávio Bolsonaro (PL)</h3>
+                <ul>
+                    <li><strong>Ambiente de negócios sem "campeãs nacionais":</strong> Rejeita escolher "campeãs nacionais" e propõe elevar o crescimento do PIB para 4% ao ano via redução do custo Brasil: juros baixos, menos impostos, energia barata, "revogaço regulatório" e abertura comercial para acesso a bens de capital e tecnologia[cite: 111, 133, 147, 148].</li>
+                    <li><strong>Licenciamento ágil e conexão universidade-empresa:</strong> Propõe licenciamento ambiental com aprovação automática caso o Estado descumpra o prazo de análise, estabilidade regulatória de até 20 anos, difusão de IA nas empresas e transferência do Ensino Superior para o MCTI, orientando CAPES e CNPq para inovação industrial[cite: 120, 121, 134, 140].</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Rodovias x Ferrovias -->
+    <section class="topic-section">
+        <h2>6. Rodovias x Ferrovias e Logística</h2>
+        <div class="comparison-grid">
+            <div class="candidate-box box-lula">
+                <h3>Luiz Inácio Lula da Silva (PT)</h3>
+                <ul>
+                    <li><strong>Novo PAC (Público + Concessões):</strong> Destaca R$ 1,3 trilhão no Novo PAC até 2026 (R$ 280 bi investidos em infraestrutura em 2025 e R$ 300 bi previstos em 2026) e recorde histórico em concessões rodoviárias (quadruplicando leilões frente ao governo anterior e alcançando 46% de todas as concessões já realizadas no país)[cite: 11, 53].</li>
+                    <li><strong>Equilíbrio modal na próxima gestão:</strong> Propõe <strong>manter o ritmo nas concessões e obras rodoviárias</strong> e <strong>intensificar as concessões de ferrovias em duas frentes</strong>: leilão de novos projetos e repactuação dos contratos existentes, além de expandir trens, metrôs e VLTs urbanos[cite: 46, 53].</li>
+                </ul>
+            </div>
+            <div class="candidate-box box-flavio">
+                <h3>Flávio Bolsonaro (PL)</h3>
+                <ul>
+                    <li><strong>R$ 900 bilhões via iniciativa privada:</strong> Propõe investir R$ 900 bilhões em 4 anos para baixar o custo logístico (de 15,5% do PIB), usando PPPs, concessões, um fundo lastreado na securitização de imóveis da União e BNDES restrito exclusivamente a obras no Brasil[cite: 115, 134, 135].</li>
+                    <li><strong>Projetos ferroviários e hidroviários prioritários:</strong> Propõe criar os <em>Corredores Logísticos Inteligentes</em>, destravar a <strong>Ferrogrão</strong> e a <strong>Hidrovia do Tapajós</strong>, implantar o <strong>trem de cargas MT–PR–SC</strong>, concluir a <strong>Transnordestina</strong> (incluindo PB e RN) e criar o <strong>Trem do Nordeste</strong> para passageiros (1.400 km)[cite: 135, 144].</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Nordeste -->
+    <section class="topic-section">
+        <h2>7. Propostas para o Nordeste</h2>
+        <div class="comparison-grid">
+            <div class="candidate-box box-lula">
+                <h3>Luiz Inácio Lula da Silva (PT)</h3>
+                <ul>
+                    <li><strong>Polo de Indústrias Eletrointensivas Verdes:</strong> Aproveitando que a região concentra cerca de 70% da geração eólica e solar do país, propõe atrair plantas de siderurgia verde, fertilizantes, química, cimento, alumínio, processamento de minerais críticos e hidrogênio de baixo carbono[cite: 56].</li>
+                    <li><strong>Segurança Hídrica, Clima, Educação e Fundos:</strong> Destaca R$ 15 bilhões do Novo PAC em obras da Transposição do São Francisco, canais, adutoras, barragens e 172,4 mil cisternas; propõe financiamento climático permanente para o Semiárido e proteção da Caatinga, regulamentação do Fundo Nacional de Desenvolvimento Regional, manutenção do FNE, conclusão do <strong>ITA no Ceará</strong> e produção de fertilizantes pela Petrobras em Sergipe e Bahia[cite: 33, 56, 63, 72].</li>
+                </ul>
+            </div>
+            <div class="candidate-box box-flavio">
+                <h3>Flávio Bolsonaro (PL)</h3>
+                <ul>
+                    <li><strong>Obras Hídricas e Polos de Irrigação:</strong> Propõe concluir e executar o Ramal do Apodi, Ramal do Salgado, Adutora do Seridó, Canal do Xingó, Ramal do Piancó, Canais do Sertão Baiano, Piauiense e Alagoano, CAC e duplicação do Eixão das Águas do Ceará, além de expandir a agricultura irrigada no Matopiba e no <strong>Baixio do Irecê</strong>[cite: 136, 139, 144].</li>
+                    <li><strong>Ferrovias, Energia Limpa, Data Centers e Terras Raras:</strong> Propõe implantar o <strong>Trem do Nordeste</strong> (1.400 km ligando Salvador, Aracaju, Maceió, Recife, João Pessoa, Natal e Fortaleza), concluir a <strong>Transnordestina</strong> estendendo-a para Paraíba e Rio Grande do Norte, atrair <em>data centers</em> com a energia solar e eólica da região, explorar reservas locais de terras raras e usar o Banco do Nordeste no programa <em>Ganha, Ganha</em>[cite: 104, 135, 144, 145].</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Similaridades -->
+    <section class="topic-section">
+        <h2>8. Similaridades entre os Candidatos</h2>
+        <div class="summary-box">
+            <ul>
+                <li><strong>Industrialização de Minerais Críticos e Terras Raras:</strong> Ambos rejeitam a exportação meramente primária e propõem verticalizar o processamento mineral no Brasil aproveitando a matriz energética limpa[cite: 52, 139, 140].</li>
+                <li><strong>Nordeste como Hub de Energia Limpa e Obras Hídricas:</strong> Ambos planejam usar o potencial solar e eólico nordestino para atrair investimentos intensivos em energia e tecnologia, além de dar continuidade às obras hídricas complementares do Rio São Francisco[cite: 56, 72, 136, 144, 145].</li>
+                <li><strong>Autossuficiência em Fertilizantes e Biocombustíveis:</strong> Ambos defendem ampliar a produção nacional de fertilizantes e expandir etanol, biodiesel, biogás/biometano e o Combustível Sustentável de Aviação (SAF) sob a Lei do Combustível do Futuro e o RenovaBio[cite: 63, 67, 68, 132, 137, 139].</li>
+                <li><strong>Baterias, Transmissão e Mercado de Carbono:</strong> Ambos preveem investimentos em armazenamento elétrico por baterias, expansão de linhas de transmissão, mercado regulado de carbono e Pagamento por Serviços Ambientais (PSA)[cite: 51, 64, 65, 70, 72, 136, 137, 141].</li>
+                <li><strong>Digitalização do SUS e Uso da Rede Privada:</strong> Ambos propõem consolidar o prontuário eletrônico único, usar Inteligência Artificial para agendamentos e contratar capacidade ociosa de hospitais privados para reduzir filas do SUS[cite: 35, 37, 38, 109, 110, 121, 122].</li>
+                <li><strong>Rede de Cuidado e Proteção às Mulheres:</strong> Ambos se comprometem a manter programas sociais, monitorar agressores de mulheres, expandir creches e apoiar Centros-Dia e atendimento domiciliar para idosos e pessoas com deficiência[cite: 19, 21, 22, 25, 26, 98, 102, 105, 122, 126].</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 9. Diferenças -->
+    <section class="topic-section">
+        <h2>9. Principais Diferenças Estruturais</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Dimensão</th>
+                    <th>Luiz Inácio Lula da Silva (PT)</th>
+                    <th>Flávio Bolsonaro (PL)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Papel do Estado e Estatais</strong></td>
+                    <td>Estado indutor do desenvolvimento; fortalecimento de estatais e bancos públicos; retorno da Petrobras à distribuição de combustíveis e exigência de conteúdo local[cite: 17, 51, 67].</td>
+                    <td>Estado enxuto ("regulador, não empresário"); corte de no mínimo 10 ministérios; fortalecimento da Lei das Estatais e retomada do Programa Nacional de Desestatização[cite: 139, 153, 154].</td>
+                </tr>
+                <tr>
+                    <td><strong>Política Fiscal e Tributária</strong></td>
+                    <td>Manutenção do Novo Arcabouço Fiscal; tributação de super-ricos para isentar IR até R$ 5 mil; implementação da Reforma Tributária aprovada (CBS/IBS)[cite: 10, 11, 19, 49].</td>
+                    <td>Substituição do arcabouço por regra de superávit primário e limite de gastos aos 3 Poderes ("Tesouraço"); revisão da Reforma Tributária para reduzir o IVA[cite: 114, 152, 154, 155, 156].</td>
+                </tr>
+                <tr>
+                    <td><strong>Política Externa</strong></td>
+                    <td>Prioridade ao BRICS, Sul Global e Mercosul; crítica aos tarifaços de Trump e ao unilateralismo[cite: 12, 79, 80, 81].</td>
+                    <td>Prioridade urgente à adesão à OCDE e reaproximação com EUA, Israel e Argentina; abertura comercial[cite: 146, 147].</td>
+                </tr>
+                <tr>
+                    <td><strong>Trabalho e Sindicatos</strong></td>
+                    <td>Fim da escala 6x1 e redução da jornada para 40h sem redução salarial; combate à pejotização; regulação de apps e fortalecimento sindical[cite: 74, 75, 76].</td>
+                    <td>Prevalência do "negociado sobre o legislado"; menor custo de folha para jovens e 50+; oposição à "República Sindical" e trabalho por app sem sindicatos[cite: 127, 128, 129].</td>
+                </tr>
+                <tr>
+                    <td><strong>Segurança Pública</strong></td>
+                    <td>Controle de armas; PEC da Segurança Pública e criação do Ministério da Segurança Pública; inteligência financeira e prevenção social[cite: 27, 28, 30].</td>
+                    <td>Enquadramento de facções como narcoterroristas; abate de criminosos com fuzil; maioridade penal aos 16 anos (e punição aos 14 em crimes graves); presídios no modelo de El Salvador ("TREVA"); castração química e fim da progressão em crimes hediondos[cite: 97, 98, 99].</td>
+                </tr>
+                <tr>
+                    <td><strong>Educação e Liberdade Digital</strong></td>
+                    <td>Expansão da rede pública federal, manutenção do Pé-de-Meia e regulação democrática das plataformas digitais contra desinformação[cite: 16, 32, 33, 82].</td>
+                    <td>Método fônico, Escolas Cívico-Militares, <em>vouchers</em> na rede privada, ensino superior no MCTI, esporte feminino restrito ao sexo biológico feminino e "Tesouraço na Censura"[cite: 105, 119, 120, 124, 125, 150].</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- 10. Conclusão -->
+    <section class="topic-section">
+        <h2>10. Conclusão</h2>
+        <p class="conclusion-text">
+            A comparação entre os dois documentos revela dois projetos distintos de organização do Estado e da economia brasileira para o período 2027–2030, embora ambos identifiquem oportunidades estratégicas semelhantes na transição energética, nos minerais críticos, nos biocombustíveis e no desenvolvimento do Nordeste[cite: 52, 56, 67, 137, 139, 144].
+        </p>
+        <p class="conclusion-text">
+            A candidatura de <strong>Luiz Inácio Lula da Silva</strong> propõe consolidar um modelo <strong>nacional-desenvolvimentista e social-democrata</strong>, apoiado na coordenação estatal de investimentos (Novo PAC e Nova Indústria Brasil), no papel estratégico da Petrobras e dos bancos públicos, na redistribuição de renda via salário mínimo, direitos trabalhistas e progressividade tributária, e em uma inserção multipolar ancorada nos BRICS e no Sul Global[cite: 10, 11, 50, 67, 74, 81].
+        </p>
+        <p class="conclusion-text">
+            Por sua vez, a candidatura de <strong>Flávio Bolsonaro</strong> propõe uma plataforma <strong>liberal-conservadora</strong>, ancorada no enxugamento administrativo e fiscal do Estado ("Tesouraço"), na revisão da Reforma Tributária para desonerar a produção e o consumo, na concessão da infraestrutura e da mineração à iniciativa privada sob regras estáveis, no alinhamento institucional à OCDE e a parceiros ocidentais tradicionais, e no endurecimento severo da legislação penal e de segurança pública[cite: 97, 98, 134, 139, 146, 147, 152, 155, 156].
+        </p>
+    </section>
+
+    <footer>
+        Relatório elaborado exclusivamente com base nos documentos oficiais dos candidatos para o ciclo 2027–2030[cite: 1, 2, 85].
+    </footer>
+</div>
+
+</body>
+</html>

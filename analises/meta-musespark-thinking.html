@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Relatório Comparativo — Lula x Flávio Bolsonaro</title>
+<style>
+:root{--navy:#0f2339;--navy2:#163a5e;--gold:#c5a880;--teal:#0e7c6b;--red:#b03a2e;--blue:#1e5aa8;--bg:#f6f4ef;--card:#ffffff;--mut:#5d6b7a;--line:#e2ddd3}
+*{box-sizing:border-box} body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:#1a222e;line-height:1.6}
+a{color:var(--blue)} .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.top{ background:var(--navy);color:#fff;padding:14px 0;font-size:13px;letter-spacing:.04em;text-transform:uppercase}
+.top .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.hero{background:linear-gradient(135deg,#0f2339 0%,#1b4a6b 58%,#0e7c6b 100%);color:#fff;padding:48px 0 36px}
+.hero h1{font-size:42px;line-height:.95;margin:8px 0 12px;letter-spacing:-.02em;max-width:840px}
+.hero h1 span{color:var(--gold)} .kicker{color:#ffd9a0;letter-spacing:.16em;font-weight:700;font-size:12px}
+.hero p{max-width:820px;color:#dbe8f2;font-size:16.5px}
+.pill{display:inline-block;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);font-size:12px;margin-right:8px;margin-top:10px}
+.nav{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 2px 12px rgba(0,0,0,.05)}
+.nav .wrap{display:flex;gap:18px;overflow-x:auto;padding:12px 20px;white-space:nowrap;font-size:13px;font-weight:600}
+.nav a{text-decoration:none;color:#223} .nav a:hover{color:var(--teal)}
+.summary{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;margin:28px 0}
+.summary h2{margin:0 0 6px} .grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media(max-width:760px){.grid2{grid-template-columns:1fr}.hero h1{font-size:32px}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+.card h3{margin:0 0 4px;font-size:16px} .muted{color:var(--mut);font-size:13.5px}
+.badge{display:inline-block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:800;padding:4px 8px;border-radius:6px;margin-bottom:8px}
+.badge.blue{background:#e8eefb;color:#1e5aa8} .badge.red{background:#fbe9e7;color:#9e2b20} .badge.green{background:#e6f4f0;color:#0e7c6b} .badge.gold{background:#fdf1d8;color:#7a5a17}
+.section{margin:36px 0} .section-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:14px}
+.num{width:44px;height:44px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-weight:900;font-size:18px;flex-shrink:0}
+.section h2{margin:0;font-size:26px;letter-spacing:-.02em;line-height:1.1} .section p.lead{color:#3a4a5c;max-width:820px;margin:6px 0 0 58px}
+@media(max-width:760px){.section p.lead{margin-left:0}}
+.vs{display:grid;grid-template-columns:1fr 34px 1fr;gap:12px;align-items:stretch}
+@media(max-width:760px){.vs{grid-template-columns:1fr}.vs .mid{display:none}}
+.mid{display:grid;place-items:center;font-weight:900;color:#fff} .mid span{background:var(--gold);width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-size:11px}
+.cand{border-radius:14px;padding:18px;border:1px solid var(--line);background:#fff}
+.cand.flavio{border-top:5px solid var(--blue)} .cand.lula{border-top:5px solid #c0392b}
+.cand h3{margin:0;font-size:17px} .cand h3 small{display:block;color:var(--mut);font-weight:500;font-size:12.5px;text-transform:uppercase;letter-spacing:.08em}
+.cand ul{padding-left:18px;margin:12px 0} .cand li{margin:8px 0;font-size:14.8px}
+.quote{background:#f8f6f0;border-left:3px solid var(--gold);padding:10px 12px;font-size:13.5px;color:#4a3f2e;margin-top:12px;border-radius:0 8px 8px 0}
+.verdict{background:var(--navy);color:#fff;border-radius:12px;padding:14px 16px;margin-top:14px;display:flex;gap:12px}
+.verdict b{color:#ffd9a0}
+table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden}
+th,td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--line);font-size:14px;vertical-align:top} th{background:#0f2339;color:#fff;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase}
+.callout{background:#fff3cd;border:1px solid #e6c87a;border-radius:12px;padding:16px;font-size:14px}
+.foot{margin:40px 0 60px;color:var(--mut);font-size:13px;border-top:1px solid var(--line);padding-top:18px}
+.score{display:flex;gap:10px;flex-wrap:wrap} .score div{flex:1;min-width:160px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px}
+.score strong{font-size:22px;display:block}
+.toc{columns:2;gap:20px;font-size:14px} .toc a{text-decoration:none;color:#223}
+@media(max-width:600px){.toc{columns:1}}
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap"><span>Análise documental • Programas de Governo 2026</span><span>Fontes: flavio.pdf &nbsp;•&nbsp; lula.pdf • 24 Out 2026</span></div></div>
+
+<header class="hero"><div class="wrap">
+<div class="kicker">RELATÓRIO COMPARATIVO • ELEIÇÃO PRESIDENCIAL</div>
+<h1>Lula <span>×</span> Flávio Bolsonaro:<br>o que cada um promete — e onde eles se chocam</h1>
+<p>Leitura integral dos dois programas enviados. O relatório não usa notícias, pesquisas ou declarações fora dos PDFs. Quando um tema é central num documento e quase ausente no outro, isso também é um dado — e está assinalado.</p>
+<span class="pill">10 tópicos solicitados</span><span class="pill">Citação por página em cada seção</span><span class="pill">Sem inventar números fora dos textos</span>
+</div></header>
+
+<nav class="nav"><div class="wrap">
+<a href="#resumo">Resumo</a><a href="#t1">1. China × EUA</a><a href="#t2">2. Petróleo</a><a href="#t3">3. Terras Raras</a><a href="#t4">4. Déficit Fiscal</a><a href="#t5">5. Industrialização</a><a href="#t6">6. Rodovias × Ferrovias</a><a href="#t7">7. Nordeste</a><a href="#t8">8. Similaridades</a><a href="#t9">9. Diferenças</a><a href="#t10">10. Conclusão</a>
+</div></nav>
+
+<div class="wrap">
+
+<section class="summary" id="resumo">
+<h2>Resumo em 60 segundos</h2>
+<p>Os dois programas concordam no diagnóstico genérico — <b>soberania, agregar valor no Brasil em vez de exportar matéria-prima bruta, energia barata e Nordeste como fronteira de desenvolvimento</b> — mas divergem no <i>como</i> e no <i>quem manda</i>.</p>
+<div class="score">
+<div><strong style="color:#1e5aa8">Flávio</strong><span class="muted">Estado regulador, não empresário. Mercado, OCDE, PPPs e concessões. Corte de gasto como motor da queda de juros.</span></div>
+<div><strong style="color:#c0392b">Lula</strong><span class="muted">Estado indutor e executor. Petrobras, Novo PAC e Nova Indústria Brasil. Gasto social preservado e ajuste pela receita / justiça tributária.</span></div>
+<div><strong>Geopolítica</strong><span class="muted">Flávio: pragmático, pró-OCDE e reaproximação com EUA. Lula: multipolar, BRICS + Sul Global, reforma do FMI/Banco Mundial.</span></div>
+</div>
+<h3 style="margin:18px 0 8px">Matriz rápida</h3>
+<table><tr><th>Tema</th><th>Flávio — ênfase</th><th>Lula — ênfase</th><th>Grau de choque</th></tr>
+<tr><td><b>China × EUA</b></td><td>Negociar com todos, sem ideologia; retomar OCDE</td><td>Autonomia, BRICS, Sul Global; sem subordinação</td><td><b>Alto</b> — arquitetura de alianças oposta</td></tr>
+<tr><td><b>Petróleo</b></td><td>Refino, gás, fracking, mercado e escoamento</td><td>Petrobras como vetor: refino, naval, fertilizantes, Gás do Povo</td><td><b>Alto</b> — papel da estatal</td></tr>
+<tr><td><b>Terras raras</b></td><td>Atrair capital estrangeiro + verticalizar com incentivos</td><td>Política específica + beneficiamento soberano</td><td>Médio — objetivo igual, instrumento diferente</td></tr>
+<tr><td><b>Déficit fiscal</b></td><td>Tesouraço, superávit primário, dívida/PIB em queda</td><td>Manter arcabouço, déficit 0,4% do PIB em 2026, tributar super-ricos</td><td><b>Alto</b> — quem paga o ajuste</td></tr>
+<tr><td><b>Industrialização</b></td><td>Competitividade, segurança jurídica, cadeias globais</td><td>Neoindustrialização dirigida: NIB R$ 860 bi</td><td><b>Alto</b> — Estado indutor vs facilitador</td></tr>
+<tr><td><b>Rodovias × Ferrovias</b></td><td>R$ 900 bi, corredores, Ferrogrão + Trem do Nordeste</td><td>Novo PAC R$ 1,3 tri, manter rodovias + intensificar ferrovias</td><td>Baixo-Médio — ambos multimodais</td></tr>
+<tr><td><b>Nordeste</b></td><td>Água primeiro, irrigação, Trem do Nordeste, energia limpa</td><td>Polo eletrointensivo, FNE, Fundo Regional, 70% eólica/solar</td><td>Médio — projetos diferentes, vocação igual</td></tr>
+</table>
+</section>
+
+<!-- 1 -->
+<section class="section" id="t1"><div class="section-head"><div class="num">1</div><h2>Relação China × EUA</h2></div><p class="lead">O tema mais revelador da diferença de mundo. Nenhum dos dois propõe romper com China ou EUA — mas a ordem de prioridades é invertida.</p>
+<div class="vs"><div class="cand flavio"><span class="badge blue">Flávio Bolsonaro — pp. 61-63</span><h3>Pragmatismo pró-Ocidente, sem escolher amigos por ideologia<small>Plano “Soberania com profissionalismo”</small></h3><ul>
+<li><b>Negociar com todos:</b> “da China à União Europeia, dos Estados Unidos aos mercados asiáticos”, orientado pelo produtor e trabalhador, não por simpatia por governos.</li>
+<li><b>Reverter desgaste:</b> diz que relações com Argentina, EUA e Israel foram levadas “ao limite do rompimento” e promete retomá-las.</li>
+<li><b>OCDE como âncora:</b> retomar cronograma de adesão, fim gradual do IOF sobre câmbio, convergência regulatória, governança de estatais.</li>
+<li><b>Soberania = prática:</b> abrir mercados, atrair investimento, força econômica — não “bravata”. Critica recepção de Maduro e navios iranianos.</li>
+<li><b>Sanções:</b> buscar soluções diplomáticas contra sanções de EUA, China e Europa ao agro (p. 54).</li></ul><div class="quote">“Não trataremos como adversários os nossos parceiros mais importantes e tradicionais.” — p. 62</div></div><div class="mid"><span>VS</span></div>
+<div class="cand lula"><span class="badge red">Lula — pp. 77-83, 12</span><h3>Autonomia multipolar, Sul Global e reforma da ordem<small>Cap. 13: Soberania e protagonismo internacional</small></h3><ul>
+<li><b>Sem subordinação:</b> política externa “sem qualquer tipo de subordinação estratégica”, contra “nova Guerra Fria” e imposições unilaterais.</li>
+<li><b>BRICS + G20 + Sul Global:</b> aprofundar aproximação geopolítica com BRICS e Sul Global, fortalecer NDB e mecanismos financeiros dos BRICS.</li>
+<li><b>Reformar o sistema:</b> democratizar FMI e Banco Mundial, reformar Conselho de Segurança da ONU e OMC.</li>
+<li><b>Integração regional primeiro:</b> América do Sul como primeiro círculo, Mercosul como plataforma, acordos Mercosul-UE, EFTA e Singapura, 656 novos mercados abertos.</li>
+<li><b>Resposta ao tarifaço:</b> cita “três ondas de tarifaços pelo Governo Trump” e Plano Brasil Soberano como resposta (p. 12).</li></ul><div class="quote">“Soberania não é palavra de ocasião: é princípio permanente e inegociável.” — p. 83</div></div></div>
+<div class="verdict"><span>⚖️</span><div><b>Leitura:</b> Flávio quer reinserir o Brasil nas regras do clube ocidental (OCDE). Lula quer reescrever as regras a partir do Sul Global. Ambos falam em universalismo e “negociar com todos”, mas o ponto de apoio é oposto. China aparece nominalmente pouco nos dois textos — o conflito é de arquitetura, não de nome.</div></div></section>
+
+<!-- 2 -->
+<section class="section" id="t2"><div class="section-head"><div class="num">2</div><h2>Petróleo</h2></div><p class="lead">Os dois querem produzir mais e refinar mais no Brasil. A diferença é quem comanda: mercado + regulação vs Petrobras como empresa executora.</p>
+<div class="vs"><div class="cand flavio"><span class="badge blue">Flávio Bolsonaro — pp. 52-53</span><h3>Segurança energética ao menor preço<small>Programa Nacional de Segurança Energética</small></h3><ul>
+<li><b>Refino e escoamento:</b> foco em refino, processamento, escoamento e transporte de combustíveis e gás.</li>
+<li><b>Gás não-convencional:</b> permitir exploração por fracking “com responsabilidade ambiental e cumprindo a lei”.</li>
+<li><b>Pré-sal desperdiçado:</b> Brasil produz mais gás no pré-sal, mas desperdiça parte por falta de escoamento e importa gás caro — expandir rede com segurança jurídica para investimento privado.</li>
+<li><b>Continuidade da Lei do Gás 2021:</b> quebrar monopólio, abrir concorrência para preço cair. Modernizar refino para aproveitar petróleo nacional.</li>
+<li><b>Fertilizantes a partir do gás:</b> reduzir dependência externa que fragiliza o agro.</li>
+<li>Petrobras <b>não</b> é citada nominalmente neste capítulo — o sujeito é o investimento privado.</li></ul></div><div class="mid"><span>VS</span></div>
+<div class="cand lula"><span class="badge red">Lula — pp. 63-67</span><h3>Petrobras retomada como motor industrial<small>PNTE + Novo PAC energia</small></h3><ul>
+<li><b>Recordes:</b> 4,897 milhões de barris de óleo equivalente/dia no final de 2025; investimentos da Petrobras +79% em 2023-2025 vs 2019-2021.</li>
+<li><b>Refino + naval + petroquímica:</b> voltou a investir em refino e derivados, gás e fertilizantes. 96 embarcações encomendadas (71 no Brasil), 70.725 empregos navais em 2026.</li>
+<li><b>Carteira Novo PAC:</b> R$ 595 bi em geração/transmissão, petróleo, gás, fertilizantes, indústria naval e refino.</li>
+<li><b>Preço amortecido:</b> nova política de preços + subvenções para não repassar preço internacional ao mercado interno (ex: Guerra do Estreito de Ormuz).</li>
+<li><b>Gás do Povo:</b> recarga gratuita de botijão GLP 13kg para +15 milhões de famílias (~50 milhões de pessoas).</li>
+<li><b>Próximo passo:</b> Petrobras voltar à distribuição, expandir refino, Transpetro para GNL, explorar onshore/offshore e campos maduros.</li></ul></div></div>
+<div class="verdict"><span>⚖️</span><div><b>Leitura:</b> Flávio: energia barata via concorrência e infraestrutura de escoamento. Lula: energia como política industrial e social, com a Petrobras produzindo refino, fertilizante, navios e proteção de preço. Nos dois, o petróleo não é “transição” a abandonar — é ativo para financiar a transição.</div></div></section>
+
+<!-- 3 -->
+<section class="section" id="t3"><div class="section-head"><div class="num">3</div><h2>Terras Raras</h2></div><p class="lead">Aqui há a maior convergência retórica — e uma das divergências mais sutis de instrumento. Ambos dizem: não exportar pedra bruta.</p>
+<div class="vs"><div class="cand flavio"><span class="badge blue">Flávio Bolsonaro — pp. 55-56, 61</span><h3>Minerais críticos como negócio + tecnologia<small>Capítulo “Minerais Críticos”</small></h3><ul>
+<li><b>Inventário:</b> lítio, nióbio, grafite, cobre, níquel, urânio e terras-raras — insumos para semicondutores, baterias, eólicas, EVs, defesa e IA.</li>
+<li><b>Vantagem combinada:</b> “temos o mineral <i>e</i> a energia limpa e competitiva para transformá-lo aqui dentro”.</li>
+<li><b>Estado regulador, não empresário:</b> 6 pilares — marco estável, licenciamento ágil, atração de capital e tecnologia, verticalização com incentivos de mercado, governança.</li>
+<li><b>Sem preconceito ideológico:</b> parcerias internacionais com todos os países que queiram cooperar; tratar mineração com o mesmo respeito da indústria de transformação.</li>
+<li><b>Nordeste:</b> terras raras citadas como matéria-prima da “economia do século 21” na região (p. 61).</li></ul></div><div class="mid"><span>VS</span></div>
+<div class="cand lula"><span class="badge red">Lula — p. 52, 56</span><h3>Minerais críticos como soberania<small>Política específica dentro da NIB</small></h3><ul>
+<li><b>Política específica:</b> “organizar cadeias, diferenciar usos tecnológicos e evitar a simples exportação de matérias-primas estratégicas”.</li>
+<li><b>Estratégia regional:</b> mapeamento, beneficiamento e agregação de valor para inserção soberana nas cadeias globais.</li>
+<li><b>Nordeste como polo:</b> processamento de minerais críticos no Nordeste, junto com siderurgia verde, fertilizantes, química e hidrogênio (p. 56).</li>
+<li><b>Contexto:</b> inserido na Nova Indústria Brasil — prioriza setores de alta/média intensidade tecnológica e Indústria 4.0.</li>
+<li>Ênfase em <b>controle soberano</b> da cadeia, não apenas em atração de capital.</li></ul></div></div>
+<div class="verdict"><span>⚖️</span><div><b>Leitura:</b> <b>Convergência quase total no objetivo</b> — verticalizar, agregar valor, usar energia limpa como diferencial. A diferença é o instrumento: Flávio aposta em capital e tecnologia estrangeiros atraídos por marco estável; Lula aposta em política pública específica e estratégia regional dirigida pelo Estado.</div></div></section>
+
+<!-- 4 -->
+<section class="section" id="t4"><div class="section-head"><div class="num">4</div><h2>Déficit Fiscal</h2></div><p class="lead">O choque fiscal é o mais frontal. Um propõe cortar o Estado para baixar juros; o outro, manter o arcabouço e fazer o ajuste pela receita.</p>
+<div class="vs"><div class="cand flavio"><span class="badge blue">Flávio Bolsonaro — pp. 68-72</span><h3>Tesouraço: cortar gasto, baixar dívida, baixar imposto<small>“Brasil que Não Volta Atrás”</small></h3><ul>
+<li><b>Diagnóstico:</b> dívida bruta/PIB subiu 13 p.p. em 4 anos do governo atual, sem pandemia; no governo Bolsonaro, caiu 4 p.p. mesmo com pandemia. Inflação fora da meta, maior juro em 19 anos, “30 novos impostos”.</li>
+<li><b>Proposta:</b> “grande TESOURAÇO” — corte profundo, enxugar máquina, cortar no mínimo 10 ministérios, cargos comissionados, penduricalhos e supersalários.</li>
+<li><b>Regra:</b> reformulação das regras fiscais para estabilizar e reduzir dívida/PIB, superávits primários, limitar crédito subsidiado com Tesouro, controlar gastos discricionários dos 3 Poderes.</li>
+<li><b>Tributo:</b> revisar reforma tributária — IVA projetado ~30% vs média OCDE 19% — reduzir IVA, não-cumulatividade, menos exceções, R$ 1 tri sem fonte nos fundos + R$ 500 bi em exceções de lobby.</li>
+<li><b>Mecanismo:</b> equilíbrio fiscal → juros para média internacional → inflação no centro da meta.</li></ul></div><div class="mid"><span>VS</span></div>
+<div class="cand lula"><span class="badge red">Lula — pp. 10-11, 49</span><h3>Manter arcabouço, ajuste pela receita e qualidade do gasto<small>“Colocar o pobre no orçamento e o rico no IR”</small></h3><ul>
+<li><b>Resultado apresentado:</b> esforço fiscal ~2% do PIB (R$ 240 bi) entre 2023-2026; déficit primário projetado 0,4% do PIB em 2026, “bastante próximo do equilíbrio”.</li>
+<li><b>Regra:</b> manter o novo arcabouço fiscal — controlou gasto sem prejudicar recomposição social; restabelecer pisos de saúde e educação.</li>
+<li><b>Receita:</b> tributar renda dos super-ricos, fechar brechas (offshores, fundos exclusivos), cortar isenções ineficientes. ~140 mil contribuintes do topo pagando mais para aliviar +15 milhões.</li>
+<li><b>Reforma:</b> 5 impostos (PIS, Cofins, IPI, ICMS, ISS) → 2 (CBS + IBS), fim da cumulatividade e guerra fiscal, cesta básica isenta + cashback.</li>
+<li><b>Juros:</b> “taxa de juros é hoje o que a inflação foi no passado” — criar condições para redução sustentada, com política fiscal responsável e controle do crescimento do gasto primário.</li></ul></div></div>
+<div class="verdict"><span>⚖️</span><div><b>Leitura:</b> Ambos prometem equilíbrio e juro menor. Flávio: <i>o ajuste é cortar gasto e reduzir carga</i>. Lula: <i>o ajuste é crescer, cortar privilégio tributário e manter gasto social</i>. É a escolha clássica entre austeridade pela despesa e ajuste pela receita — com impacto direto sobre quem sente primeiro.</div></div></section>
+
+<!-- 5 -->
+<section class="section" id="t5"><div class="section-head"><div class="num">5</div><h2>Industrialização</h2></div><p class="lead">Lula tem um programa industrial nomeado e financiado. Flávio tem uma estratégia de competitividade sem um “Plano Industrial” centralizado — e isso é, em si, uma posição.</p>
+<div class="vs"><div class="cand flavio"><span class="badge blue">Flávio Bolsonaro — pp. 49, 56, 63-64</span><h3>Competir por dentro para competir por fora<small>Sem capítulo “industrialização” — via competitividade</small></h3><ul>
+<li><b>Meta de crescimento:</b> dobrar ritmo: de 2% ao ano nas últimas 2 décadas para 4% ao ano na próxima década, apoiado em investimento privado, segurança jurídica e competitividade do agro, indústria e serviços.</li>
+<li><b>Estado facilitador:</b> “o papel do Estado não é ser o empresário, é ser o país que funciona” — regra do início é a regra do fim, estabilidade de 20 anos para grandes projetos, licenciamento ágil (se órgão não decide, licença concedida).</li>
+<li><b>Cadeias globais:</b> plano nacional de integração às cadeias globais de valor — prioridade agroindústria avançada, minerais críticos, saúde e economia digital; internacionalizar PMEs via BNDES e Apex.</li>
+<li><b>Tecnologia:</b> IA difundida em MPMEs, data centers sustentáveis com energia limpa barata, Brasil produtor — não só consumidor — de tecnologia.</li>
+<li><b>Energia como insumo industrial:</b> energia e logística baratas sustentam a indústria de portas abertas.</li></ul></div><div class="mid"><span>VS</span></div>
+<div class="cand lula"><span class="badge red">Lula — pp. 50-52</span><h3>Neoindustrialização dirigida<small>Nova Indústria Brasil — NIB</small></h3><ul>
+<li><b>Programa:</b> NIB é apresentada como resposta à desindustrialização. Só via Plano Mais Produção (P+P): R$ 860 bi entre 2023-2026.</li>
+<li><b>Resultado:</b> indústria cresceu 3,2% acumulados 2023-2025 — 6ª que mais cresceu entre G20 (p. 10).</li>
+<li><b>Objetivos:</b> elevar produtividade, agregar valor, fortalecer soberania tecnológica, gerar emprego qualificado e descarbonizar.</li>
+<li><b>Instrumentos:</b> financiamento direcionado, crédito público-privado, compras públicas, concessões, conteúdo local, margens de preferência, FNDCT sem contingenciamento, Indústria 4.0, digitalização e renovação do maquinário.</li>
+<li><b>Estrutura:</b> integra política industrial, científica, tecnológica, inovação e comércio exterior, com PTE e Taxonomia Sustentável Brasileira.</li></ul></div></div>
+<div class="verdict"><span>⚖️</span><div><b>Leitura:</b> Flávio: <i>indústria cresce se o país ficar barato, previsível e aberto</i>. Lula: <i>indústria cresce se o Estado financiar, comprar e direcionar setores portadores de futuro</i>. A diferença não é sobre gostar de indústria — é sobre quem escolhe os vencedores.</div></div></section>
+
+<!-- 6 -->
+<section class="section" id="t6"><div class="section-head"><div class="num">6</div><h2>Rodovias × Ferrovias</h2></div><p class="lead">Ninguém propõe abandonar rodovias. A diferença está na proporção, no valor anunciado e na ênfase: corredor de escoamento vs multimodal integrado ao Novo PAC.</p>
+<div class="vs"><div class="cand flavio"><span class="badge blue">Flávio Bolsonaro — pp. 50-51</span><h3>Corredores logísticos para escoar safra<small>R$ 900 bi em 4 anos</small></h3><ul>
+<li><b>Valor:</b> investir R$ 900 bilhões em 4 anos em rodovias, hidrovias, portos, aeroportos e ferrovias.</li>
+<li><b>Diagnóstico:</b> custo logístico 15,5% do PIB vs 8,8% nos EUA — isso chega ao preço da comida.</li>
+<li><b>Corredores Inteligentes:</b> integração nacional, corredores Centro-Oeste → portos, foco em redução de custo.</li>
+<li><b>Ferrovias nomeadas:</b> destravar Ferrogrão; trem de cargas MT – oeste do PR – SC; Trem do Nordeste (passageiros); concluir Transnordestina (+ PB e RN).</li>
+<li><b>Modelo:</b> iniciativa privada constrói/opera, Estado garante segurança jurídica e regras tarifárias; fundo de securitização de ativos da União, PPPs, concessões e BNDES <i>só</i> para obras no Brasil.</li></ul></div><div class="mid"><span>VS</span></div>
+<div class="cand lula"><span class="badge red">Lula — pp. 11, 53-54</span><h3>Novo PAC como integrador multimodal<small>R$ 1,3 tri até fim de 2026</small></h3><ul>
+<li><b>Valor:</b> Novo PAC: R$ 1,3 trilhão previstos até fim de 2026, chegando a 99% dos municípios. Em 2025, recorde de R$ 280 bi em infraestrutura; 2026, R$ 300 bi previstos.</li>
+<li><b>Rodovias:</b> recorde de concessões — quadruplicou leilões de rodovias vs governo anterior, 46% de todas as concessões rodoviárias já feitas.</li>
+<li><b>Ferrovias — intensificar:</b> nova edição manterá ritmo rodoviário e “intensificará as de ferrovias em duas frentes: leilão de novos projetos e repactuação dos contratos existentes”.</li>
+<li><b>Multimodal:</b> planejamento rodoviário, ferroviário, hidroviário, aéreo e marítimo integrados, priorizando redução de desigualdades e descarbonização.</li>
+<li><b>Portos/aeroportos:</b> novos arrendamentos portuários, canais de acesso, aeroportos regionais e novas rotas aéreas.</li></ul></div></div>
+<div class="verdict"><span>⚖️</span><div><b>Leitura:</b> O contraste é de <i>modelo</i>, não de modal. Flávio detalha projetos ferroviários específicos e fixa um envelope novo (R$ 900 bi/4 anos). Lula apresenta um balanço de execução (R$ 1,3 tri) e promete acelerar o que já está em curso — com ferrovias como frente de intensificação, sem listar os mesmos projetos nominados.</div></div></section>
+
+<!-- 7 -->
+<section class="section" id="t7"><div class="section-head"><div class="num">7</div><h2>Nordeste</h2></div><p class="lead">A região é tratada pelos dois como futuro, não como problema. Mas o ponto de partida muda: água e irrigação vs energia e indústria eletrointensiva.</p>
+<div class="vs"><div class="cand flavio"><span class="badge blue">Flávio Bolsonaro — pp. 52, 60-61</span><h3>Água, produção e conexão<small>“Não por assistência, mas por desenvolvimento”</small></h3><ul>
+<li><b>Água como prioridade 1:</b> concluir Eixo Norte da Transposição do São Francisco (citado como feito no governo Bolsonaro). Próximas obras: Ramal do Apodi, Ramal do Salgado, Adutora do Seridó, Canal do Xingó, Ramal do Piancó, Canais do Sertão Baiano, Piauiense e Alagoano, CAC, duplicação do Eixão das Águas.</li>
+<li><b>Transformar água em produção:</b> Baixio do Irecê — maior perímetro de irrigação da América Latina — concluir expansão.</li>
+<li><b>Trem do Nordeste:</b> 1.400 km ligando Salvador, Aracaju, Maceió, Recife, João Pessoa, Natal e Fortaleza — turismo + produção + integração.</li>
+<li><b>Transnordestina:</b> concluir e ampliar escopo para PB e RN.</li>
+<li><b>Futuro:</b> sol e vento para ser “capital da energia limpa”, data centers e nova indústria de tecnologia; terras raras. Banco do Nordeste como motor de crédito.</li></ul></div><div class="mid"><span>VS</span></div>
+<div class="cand lula"><span class="badge red">Lula — pp. 53, 55-56</span><h3>Energia e reter valor no território<small>Desenvolvimento Regional como critério permanente</small></h3><ul>
+<li><b>70% da geração:</b> Nordeste concentra hoje ~70% da geração eólica e solar do país.</li>
+<li><b>Polo eletrointensivo:</b> transformar região em polo de plantas que buscam energia renovável previsível — siderurgia verde, fertilizantes, química, cimento, alumínio, processamento de minerais críticos, hidrogênio de baixo carbono.</li>
+<li><b>Instrumentos:</b> Política Nacional de Desenvolvimento Regional, fundos constitucionais FNE/FNO/FCO, Fundo Nacional de Desenvolvimento Regional (criado na reforma tributária) para substituir guerra fiscal do ICMS.</li>
+<li><b>Reter valor:</b> territórios onde a riqueza é produzida devem deixar de apenas fornecer insumos e passar a reter valor via indústria, emprego qualificado e inovação local.</li>
+<li><b>Outros:</b> garantia de recursos hídricos no Nordeste via Novo PAC, 5G no campo com prioridade para Norte/Nordeste/periferias, turismo como pilar regional.</li></ul></div></div>
+<div class="verdict"><span>⚖️</span><div><b>Leitura:</b> Flávio detalha obra a obra a infraestrutura hídrica e ferroviária. Lula detalha o mecanismo de financiamento e a tese industrial. Ambos prometem o mesmo fim — nordestino prosperando na própria terra — por caminhos complementares, não opostos. A ausência de Trem do Nordeste e Transnordestina nominalmente no programa de Lula não significa oposição — significa outra seleção de projetos.</div></div></section>
+
+<!-- 8 -->
+<section class="section" id="t8"><div class="section-head"><div class="num">8</div><h2>Similaridades</h2></div>
+<table><tr><th>Onde eles concordam</th><th>O que isso significa</th></tr>
+<tr><td><b>Soberania como palavra central</b> — ambos repetem soberania dezenas de vezes</td><td>Não há programa “entreguista” em nenhum dos dois textos. A disputa é sobre <i>como</i> exercer soberania.</td></tr>
+<tr><td><b>Não exportar só matéria-prima bruta</b> — verticalizar minerais, petróleo, agro</td><td>Consenso sobre agregar valor no Brasil, com energia limpa como vantagem.</td></tr>
+<tr><td><b>Energia barata como competitividade</b> — reduzir conta, gás, renováveis</td><td>Energia é tratada como custo de vida e custo industrial ao mesmo tempo.</td></tr>
+<tr><td><b>Nordeste como fronteira</b> — sol, vento, terras raras, água</td><td>Região deixa de ser capítulo assistencial e vira capítulo de futuro.</td></tr>
+<tr><td><b>Infraestrutura multimodal</b> — rodovias + ferrovias + portos + hidrovias</td><td>Nenhum defende monomodal. A diferença é ênfase e gestão.</td></tr>
+<tr><td><b>Programas sociais mantidos</b> — Flávio: manter com aperfeiçoamento; Lula: recriar/expandir Bolsa Família</td><td>Retórica de ruptura é menor do que parece no texto oficial.</td></tr>
+<tr><td><b>Biocombustíveis, data centers e IA</b> — todos aparecem como futuro</td><td>Agenda de transição e digitalização é compartilhada.</td></tr>
+<tr><td><b>Crítica ao governo anterior como herança ruim</b></td><td>Ambos constroem narrativa de reconstrução — Flávio contra Lula III, Lula contra Bolsonaro/Temer.</td></tr>
+</table>
+</section>
+
+<!-- 9 -->
+<section class="section" id="t9"><div class="section-head"><div class="num">9</div><h2>Diferenças</h2></div>
+<div class="callout"><b>Resumo da diferença estrutural:</b> Não é só “esquerda vs direita” em temas soltos. É <b>dois modelos de Estado</b> que se repetem em todos os capítulos.</div>
+<table style="margin-top:14px"><tr><th>Dimensão</th><th>Flávio Bolsonaro</th><th>Lula</th></tr>
+<tr><td><b>Estado</b></td><td>Regulador, coordenador, enxuto — “não é empresário”</td><td>Indutor, executor, investidor — Petrobras, PAC, NIB</td></tr>
+<tr><td><b>Aliança externa</b></td><td>OCDE, Ocidente, cadeias globais</td><td>BRICS, Sul Global, Mercosul, reforma das instituições</td></tr>
+<tr><td><b>Ajuste fiscal</b></td><td>Corte de despesa, menos ministérios, menos impostos</td><td>Receita progressiva, arcabouço, gasto social protegido</td></tr>
+<tr><td><b>Financiamento do desenvolvimento</b></td><td>PPPs, concessões, mercado, BNDES para obras no Brasil</td><td>Orçamento + estatais + financiamento dirigido + compras públicas</td></tr>
+<tr><td><b>Petróleo e gás</b></td><td>Mercado e escoamento, fracking</td><td>Petrobras integrada, preço amortecido, Gás do Povo</td></tr>
+<tr><td><b>Indústria</b></td><td>Competitividade e segurança jurídica</td><td>Neoindustrialização planejada e financiada</td></tr>
+<tr><td><b>Terras raras</b></td><td>Atrair capital estrangeiro sem ideologia</td><td>Política soberana e regional de beneficiamento</td></tr>
+<tr><td><b>Nordeste</b></td><td>Obra hídrica + trem de passageiros + irrigação</td><td>Financiamento regional + polo industrial verde</td></tr>
+</table>
+<p class="muted" style="margin-top:10px">Observação de leitura: Flávio dedica muito mais espaço a segurança pública, Judiciário e “tesouraço” como capítulo de garantia. Lula dedica muito mais espaço a saúde, educação, cultura e clima como política de Estado. Isso não foi solicitado como tópico, mas explica por que os programas parecem ter tamanhos e tons diferentes mesmo quando concordam em economia.</p>
+</section>
+
+<!-- 10 -->
+<section class="section" id="t10"><div class="section-head"><div class="num">10</div><h2>Conclusão</h2></div>
+<div class="grid2">
+<div class="card"><h3>Se você vota no modelo Flávio</h3><p>Você está escolhendo <b>previsibilidade para quem investe</b> como motor: Estado menor, regras estáveis por 20 anos, OCDE como selo, corte de gasto para baixar juros, infraestrutura via concessão e energia barata via concorrência. O risco, pelo próprio texto, é que a entrega depende de conseguir aprovar o “Tesouraço” e a revisão da reforma tributária no Congresso — sem isso, o círculo virtuoso (corte → juro → investimento) trava.</p></div>
+<div class="card"><h3>Se você vota no modelo Lula</h3><p>Você está escolhendo <b>capacidade de execução do Estado</b> como motor: Petrobras, Novo PAC e Nova Indústria Brasil como alavancas, financiamento regional para reter valor, preço de combustível amortecido e ajuste fiscal via tributação dos mais ricos. O risco, pelo próprio texto, é que o resultado fiscal prometido (déficit 0,4% do PIB) depende de crescimento e receita — e de manter o arcabouço sem abrir exceções.</p></div>
+</div>
+<div class="summary" style="margin-top:18px">
+<h3>O que decide a eleição, segundo os próprios programas</h3>
+<p>1) <b>Geopolítica:</b> Brasil nas regras existentes (OCDE) ou tentando mudá-las (BRICS).<br>
+2) <b>Petróleo:</b> energia como mercado ou como política industrial e social.<br>
+3) <b>Fiscal:</b> quem paga o ajuste — despesa ou topo da renda.<br>
+4) <b>Desenvolvimento regional:</b> obra física no Nordeste ou indústria eletrointensiva no Nordeste — ou os dois, em sequência.</p>
+<p><b>Em uma frase:</b> Ambos prometem o mesmo destino — um Brasil que agrega valor, tem energia barata, reindustrializa e faz o Nordeste prosperar — mas um quer chegar lá <i>desatando o Estado para o mercado produzir</i>, e o outro <i>usando o Estado para produzir junto com o mercado</i>. A escolha não é entre soberania ou não-soberania, mas entre duas soberanias.</p>
+</div>
+</section>
+
+<div class="foot">
+<b>Metodologia e limites.</b> Análise feita apenas a partir dos PDFs enviados (<i>flavio.pdf</i> e <i>lula.pdf</i>). Páginas citadas ao longo do texto referem-se à numeração interna dos documentos, não à numeração do arquivo. Números como R$ 900 bi (Flávio), R$ 1,3 tri e R$ 860 bi (Lula), déficit 0,4% do PIB e 4,897 milhões boe/d foram extraídos literalmente dos textos. Quando um tema não aparece nominalmente (ex.: “China” aparece só 2 vezes em Flávio; “EUA” não aparece nominalmente no programa de Lula), isso foi registrado como ausência, não completado com fontes externas. Para decisão de voto, recomenda-se ler também os capítulos fora deste recorte — segurança, saúde, educação e meio ambiente — onde as diferenças são ainda mais marcadas.<br><br>
+Fontes: Programa de Governo — Flávio Bolsonaro (76 pp.) • Programa de Governo — Lula (Transformação do Brasil). Documento gerado em 24/10/2026.
+</div>
+
+</div>
+</body>
+</html>
